@@ -1,0 +1,1198 @@
+[2013-02-12 18:12:53] INFO  WEBrick 1.3.1
+[2013-02-12 18:12:53] INFO  ruby 1.8.7 (2010-08-16) [i486-linux]
+[2013-02-12 18:12:53] INFO  WEBrick::HTTPServer#start: pid=32230 port=3002
+=> Booting WEBrick
+=> Rails 3.2.11 application starting in development on http://0.0.0.0:3002
+=> Call with -d to detach
+=> Ctrl-C to shutdown server
+
+
+Started GET "/" for 124.35.46.4 at Tue Feb 12 18:12:59 +0900 2013
+Connecting to database specified by database.yml
+Processing by TopController#index as HTML
+  [1m[36mPlayer Load (0.2ms)[0m  [1mSELECT "players".* FROM "players" [0m
+  Rendered top/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 130ms (Views: 60.0ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/assets/players.css?body=1" for 124.35.46.4 at Tue Feb 12 18:12:59 +0900 2013
+Served asset /players.css - 200 OK (4ms)
+
+
+Started GET "/assets/application.css?body=1" for 124.35.46.4 at Tue Feb 12 18:12:59 +0900 2013
+Served asset /application.css - 200 OK (7ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 124.35.46.13 at Tue Feb 12 18:13:00 +0900 2013
+Served asset /scaffolds.css - 200 OK (2ms)
+
+
+Started GET "/assets/top.css?body=1" for 124.35.46.13 at Tue Feb 12 18:13:00 +0900 2013
+Served asset /top.css - 200 OK (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 124.35.46.13 at Tue Feb 12 18:13:00 +0900 2013
+Served asset /jquery.js - 200 OK (7ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 124.35.46.13 at Tue Feb 12 18:13:00 +0900 2013
+Served asset /jquery_ujs.js - 200 OK (3ms)
+
+
+Started GET "/assets/players.js?body=1" for 124.35.46.4 at Tue Feb 12 18:13:00 +0900 2013
+Served asset /players.js - 200 OK (3ms)
+
+
+Started GET "/assets/top.js?body=1" for 124.35.46.4 at Tue Feb 12 18:13:00 +0900 2013
+Served asset /top.js - 200 OK (3ms)
+
+
+Started GET "/assets/application.js?body=1" for 124.35.46.13 at Tue Feb 12 18:13:00 +0900 2013
+Served asset /application.js - 200 OK (12ms)
+
+
+Started GET "/assets/rails.png" for 124.35.46.13 at Tue Feb 12 18:13:00 +0900 2013
+Served asset /rails.png - 200 OK (2ms)
+
+
+Started GET "/" for 124.35.46.13 at Tue Feb 12 18:13:35 +0900 2013
+Processing by TopController#index as HTML
+  [1m[35mPlayer Load (7.7ms)[0m  SELECT "players".* FROM "players" 
+  Rendered top/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 57ms (Views: 7.8ms | ActiveRecord: 7.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 124.35.46.13 at Tue Feb 12 18:13:35 +0900 2013
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/players.css?body=1" for 124.35.46.13 at Tue Feb 12 18:13:35 +0900 2013
+Served asset /players.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 124.35.46.13 at Tue Feb 12 18:13:35 +0900 2013
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/top.css?body=1" for 124.35.46.13 at Tue Feb 12 18:13:35 +0900 2013
+Served asset /top.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 124.35.46.13 at Tue Feb 12 18:13:35 +0900 2013
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 124.35.46.4 at Tue Feb 12 18:13:35 +0900 2013
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/players.js?body=1" for 124.35.46.13 at Tue Feb 12 18:13:35 +0900 2013
+Served asset /players.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/top.js?body=1" for 124.35.46.13 at Tue Feb 12 18:13:35 +0900 2013
+Served asset /top.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 124.35.46.13 at Tue Feb 12 18:13:35 +0900 2013
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/rails.png" for 124.35.46.13 at Tue Feb 12 18:13:35 +0900 2013
+Served asset /rails.png - 304 Not Modified (0ms)
+
+
+Started GET "/players" for 124.35.46.13 at Tue Feb 12 18:13:38 +0900 2013
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.3ms)[0m  [1mSELECT "players".* FROM "players" ORDER BY points DESC[0m
+  Rendered players/index.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 21ms (Views: 18.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/players.css?body=1" for 124.35.46.13 at Tue Feb 12 18:13:38 +0900 2013
+Served asset /players.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 124.35.46.13 at Tue Feb 12 18:13:38 +0900 2013
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/top.css?body=1" for 124.35.46.4 at Tue Feb 12 18:13:38 +0900 2013
+Served asset /top.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 124.35.46.13 at Tue Feb 12 18:13:38 +0900 2013
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 124.35.46.13 at Tue Feb 12 18:13:38 +0900 2013
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 124.35.46.13 at Tue Feb 12 18:13:38 +0900 2013
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/players.js?body=1" for 124.35.46.13 at Tue Feb 12 18:13:38 +0900 2013
+Served asset /players.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/top.js?body=1" for 124.35.46.13 at Tue Feb 12 18:13:38 +0900 2013
+Served asset /top.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 124.35.46.4 at Tue Feb 12 18:13:38 +0900 2013
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/keion/mio.jpg" for 124.35.46.13 at Tue Feb 12 18:13:39 +0900 2013
+Served asset /keion/mio.jpg - 200 OK (1ms)
+
+
+Started GET "/assets/keion/ritsu.jpg" for 124.35.46.13 at Tue Feb 12 18:13:39 +0900 2013
+Served asset /keion/ritsu.jpg - 200 OK (3ms)
+
+
+Started GET "/assets/keion/mugi.jpg" for 124.35.46.13 at Tue Feb 12 18:13:39 +0900 2013
+Served asset /keion/mugi.jpg - 200 OK (2ms)
+
+
+Started GET "/assets/keion/yui.jpg" for 124.35.46.13 at Tue Feb 12 18:13:39 +0900 2013
+Served asset /keion/yui.jpg - 200 OK (2ms)
+
+
+Started GET "/assets/keion/ui.jpg" for 124.35.46.4 at Tue Feb 12 18:13:39 +0900 2013
+Served asset /keion/ui.jpg - 200 OK (4ms)
+
+
+Started GET "/assets/keion/azu.jpg" for 124.35.46.13 at Tue Feb 12 18:13:39 +0900 2013
+Served asset /keion/azu.jpg - 200 OK (3ms)
+
+
+Started GET "/players" for 124.35.46.13 at Tue Feb 12 18:14:07 +0900 2013
+Processing by PlayersController#index as HTML
+  [1m[35mPlayer Load (0.3ms)[0m  SELECT "players".* FROM "players" ORDER BY points DESC
+  Rendered players/index.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 21ms (Views: 18.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 124.35.46.13 at Tue Feb 12 18:14:08 +0900 2013
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 124.35.46.13 at Tue Feb 12 18:14:08 +0900 2013
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 124.35.46.4 at Tue Feb 12 18:14:08 +0900 2013
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/players.css?body=1" for 124.35.46.13 at Tue Feb 12 18:14:08 +0900 2013
+Served asset /players.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 124.35.46.13 at Tue Feb 12 18:14:08 +0900 2013
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/top.css?body=1" for 124.35.46.13 at Tue Feb 12 18:14:08 +0900 2013
+Served asset /top.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/top.js?body=1" for 124.35.46.13 at Tue Feb 12 18:14:08 +0900 2013
+Served asset /top.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/players.js?body=1" for 124.35.46.13 at Tue Feb 12 18:14:08 +0900 2013
+Served asset /players.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 124.35.46.4 at Tue Feb 12 18:14:08 +0900 2013
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/keion/ritsu.jpg" for 124.35.46.13 at Tue Feb 12 18:14:08 +0900 2013
+Served asset /keion/ritsu.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/keion/mio.jpg" for 124.35.46.13 at Tue Feb 12 18:14:08 +0900 2013
+Served asset /keion/mio.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/keion/ui.jpg" for 124.35.46.13 at Tue Feb 12 18:14:08 +0900 2013
+Served asset /keion/ui.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/keion/yui.jpg" for 124.35.46.13 at Tue Feb 12 18:14:08 +0900 2013
+Served asset /keion/yui.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/keion/azu.jpg" for 124.35.46.13 at Tue Feb 12 18:14:08 +0900 2013
+Served asset /keion/azu.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/keion/mugi.jpg" for 124.35.46.4 at Tue Feb 12 18:14:08 +0900 2013
+Served asset /keion/mugi.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/" for 124.35.46.13 at Tue Feb 12 18:14:11 +0900 2013
+Processing by TopController#index as HTML
+  [1m[36mPlayer Load (0.3ms)[0m  [1mSELECT "players".* FROM "players" [0m
+  Rendered top/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 13ms (Views: 10.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 124.35.46.13 at Tue Feb 12 18:14:11 +0900 2013
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 124.35.46.13 at Tue Feb 12 18:14:11 +0900 2013
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 124.35.46.4 at Tue Feb 12 18:14:11 +0900 2013
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 124.35.46.13 at Tue Feb 12 18:14:11 +0900 2013
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/top.css?body=1" for 124.35.46.13 at Tue Feb 12 18:14:11 +0900 2013
+Served asset /top.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/players.css?body=1" for 124.35.46.13 at Tue Feb 12 18:14:11 +0900 2013
+Served asset /players.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/players.js?body=1" for 124.35.46.13 at Tue Feb 12 18:14:11 +0900 2013
+Served asset /players.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/top.js?body=1" for 124.35.46.13 at Tue Feb 12 18:14:11 +0900 2013
+Served asset /top.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 124.35.46.4 at Tue Feb 12 18:14:11 +0900 2013
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/rails.png" for 124.35.46.13 at Tue Feb 12 18:14:11 +0900 2013
+Served asset /rails.png - 304 Not Modified (0ms)
+
+
+Started GET "/players" for 124.35.46.13 at Tue Feb 12 18:14:12 +0900 2013
+Processing by PlayersController#index as HTML
+  [1m[35mPlayer Load (0.3ms)[0m  SELECT "players".* FROM "players" ORDER BY points DESC
+  Rendered players/index.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 20ms (Views: 17.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 124.35.46.13 at Tue Feb 12 18:14:12 +0900 2013
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 124.35.46.13 at Tue Feb 12 18:14:12 +0900 2013
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 124.35.46.4 at Tue Feb 12 18:14:12 +0900 2013
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 124.35.46.13 at Tue Feb 12 18:14:12 +0900 2013
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/top.css?body=1" for 124.35.46.13 at Tue Feb 12 18:14:12 +0900 2013
+Served asset /top.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/players.css?body=1" for 124.35.46.13 at Tue Feb 12 18:14:12 +0900 2013
+Served asset /players.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/players.js?body=1" for 124.35.46.13 at Tue Feb 12 18:14:12 +0900 2013
+Served asset /players.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/top.js?body=1" for 124.35.46.13 at Tue Feb 12 18:14:12 +0900 2013
+Served asset /top.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 124.35.46.4 at Tue Feb 12 18:14:12 +0900 2013
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/keion/ritsu.jpg" for 124.35.46.13 at Tue Feb 12 18:14:12 +0900 2013
+Served asset /keion/ritsu.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/keion/ui.jpg" for 124.35.46.13 at Tue Feb 12 18:14:12 +0900 2013
+Served asset /keion/ui.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/keion/mio.jpg" for 124.35.46.13 at Tue Feb 12 18:14:12 +0900 2013
+Served asset /keion/mio.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/keion/mugi.jpg" for 124.35.46.4 at Tue Feb 12 18:14:12 +0900 2013
+Served asset /keion/mugi.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/keion/yui.jpg" for 124.35.46.13 at Tue Feb 12 18:14:12 +0900 2013
+Served asset /keion/yui.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/keion/azu.jpg" for 124.35.46.13 at Tue Feb 12 18:14:12 +0900 2013
+Served asset /keion/azu.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/" for 124.35.46.4 at Tue Feb 12 18:17:50 +0900 2013
+Processing by TopController#index as HTML
+  [1m[36mPlayer Load (0.2ms)[0m  [1mSELECT "players".* FROM "players" [0m
+  Rendered top/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 10ms (Views: 8.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 124.35.46.4 at Tue Feb 12 18:17:51 +0900 2013
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 124.35.46.4 at Tue Feb 12 18:17:51 +0900 2013
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/players.css?body=1" for 124.35.46.4 at Tue Feb 12 18:17:51 +0900 2013
+Served asset /players.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/top.css?body=1" for 124.35.46.4 at Tue Feb 12 18:17:51 +0900 2013
+Served asset /top.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 124.35.46.4 at Tue Feb 12 18:17:51 +0900 2013
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 124.35.46.4 at Tue Feb 12 18:17:51 +0900 2013
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/players.js?body=1" for 124.35.46.4 at Tue Feb 12 18:17:51 +0900 2013
+Served asset /players.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/top.js?body=1" for 124.35.46.4 at Tue Feb 12 18:17:51 +0900 2013
+Served asset /top.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 124.35.46.4 at Tue Feb 12 18:17:51 +0900 2013
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logos/shiraishi.jpg" for 124.35.46.4 at Tue Feb 12 18:17:51 +0900 2013
+Served asset /logos/shiraishi.jpg - 200 OK (7ms)
+
+
+Started GET "/players" for 124.35.46.4 at Tue Feb 12 18:17:52 +0900 2013
+Processing by PlayersController#index as HTML
+  [1m[35mPlayer Load (0.4ms)[0m  SELECT "players".* FROM "players" ORDER BY points DESC
+  Rendered players/index.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 20ms (Views: 18.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 124.35.46.4 at Tue Feb 12 18:17:53 +0900 2013
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/players.css?body=1" for 124.35.46.4 at Tue Feb 12 18:17:53 +0900 2013
+Served asset /players.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 124.35.46.4 at Tue Feb 12 18:17:53 +0900 2013
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 124.35.46.4 at Tue Feb 12 18:17:53 +0900 2013
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/top.css?body=1" for 124.35.46.4 at Tue Feb 12 18:17:53 +0900 2013
+Served asset /top.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 124.35.46.4 at Tue Feb 12 18:17:53 +0900 2013
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/players.js?body=1" for 124.35.46.4 at Tue Feb 12 18:17:53 +0900 2013
+Served asset /players.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/top.js?body=1" for 124.35.46.4 at Tue Feb 12 18:17:53 +0900 2013
+Served asset /top.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 124.35.46.4 at Tue Feb 12 18:17:53 +0900 2013
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/keion/yui.jpg" for 124.35.46.4 at Tue Feb 12 18:17:53 +0900 2013
+Served asset /keion/yui.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/keion/azu.jpg" for 124.35.46.4 at Tue Feb 12 18:17:53 +0900 2013
+Served asset /keion/azu.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/keion/mio.jpg" for 124.35.46.4 at Tue Feb 12 18:17:53 +0900 2013
+Served asset /keion/mio.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/keion/mugi.jpg" for 124.35.46.4 at Tue Feb 12 18:17:53 +0900 2013
+Served asset /keion/mugi.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/keion/ui.jpg" for 124.35.46.4 at Tue Feb 12 18:17:53 +0900 2013
+Served asset /keion/ui.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/keion/ritsu.jpg" for 124.35.46.4 at Tue Feb 12 18:17:53 +0900 2013
+Served asset /keion/ritsu.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/players/113629430/vote" for 124.35.46.4 at Tue Feb 12 18:17:58 +0900 2013
+Processing by PlayersController#vote as HTML
+  Parameters: {"id"=>"113629430"}
+  [1m[36mPlayer Load (0.4ms)[0m  [1mSELECT "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", "113629430"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mUPDATE "players" SET "points" = 13, "updated_at" = '2013-02-12 09:17:58.689229' WHERE "players"."id" = 113629430[0m
+  [1m[35m (6.1ms)[0m  commit transaction
+Redirected to http://otiai10.com:3002/players
+Completed 302 Found in 22ms (ActiveRecord: 7.0ms)
+
+
+Started GET "/players" for 124.35.46.4 at Tue Feb 12 18:17:58 +0900 2013
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.4ms)[0m  [1mSELECT "players".* FROM "players" ORDER BY points DESC[0m
+  Rendered players/index.html.erb within layouts/application (11.1ms)
+Completed 200 OK in 23ms (Views: 20.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 124.35.46.4 at Tue Feb 12 18:17:58 +0900 2013
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 124.35.46.4 at Tue Feb 12 18:17:58 +0900 2013
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/players.css?body=1" for 124.35.46.4 at Tue Feb 12 18:17:58 +0900 2013
+Served asset /players.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 124.35.46.4 at Tue Feb 12 18:17:58 +0900 2013
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 124.35.46.4 at Tue Feb 12 18:17:58 +0900 2013
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/top.css?body=1" for 124.35.46.4 at Tue Feb 12 18:17:58 +0900 2013
+Served asset /top.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/players.js?body=1" for 124.35.46.4 at Tue Feb 12 18:17:58 +0900 2013
+Served asset /players.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/top.js?body=1" for 124.35.46.4 at Tue Feb 12 18:17:58 +0900 2013
+Served asset /top.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 124.35.46.4 at Tue Feb 12 18:17:58 +0900 2013
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/keion/ritsu.jpg" for 124.35.46.4 at Tue Feb 12 18:17:59 +0900 2013
+Served asset /keion/ritsu.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/keion/mio.jpg" for 124.35.46.4 at Tue Feb 12 18:17:59 +0900 2013
+Served asset /keion/mio.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/keion/mugi.jpg" for 124.35.46.4 at Tue Feb 12 18:17:59 +0900 2013
+Served asset /keion/mugi.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/keion/ui.jpg" for 124.35.46.4 at Tue Feb 12 18:17:59 +0900 2013
+Served asset /keion/ui.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/keion/yui.jpg" for 124.35.46.4 at Tue Feb 12 18:17:59 +0900 2013
+Served asset /keion/yui.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/keion/azu.jpg" for 124.35.46.4 at Tue Feb 12 18:17:59 +0900 2013
+Served asset /keion/azu.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/players/113629430/vote" for 124.35.46.4 at Tue Feb 12 18:17:59 +0900 2013
+Processing by PlayersController#vote as HTML
+  Parameters: {"id"=>"113629430"}
+  [1m[35mPlayer Load (0.1ms)[0m  SELECT "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", "113629430"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  UPDATE "players" SET "points" = 14, "updated_at" = '2013-02-12 09:17:59.685091' WHERE "players"."id" = 113629430
+  [1m[36m (2.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://otiai10.com:3002/players
+Completed 302 Found in 8ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/players" for 124.35.46.4 at Tue Feb 12 18:17:59 +0900 2013
+Processing by PlayersController#index as HTML
+  [1m[35mPlayer Load (0.5ms)[0m  SELECT "players".* FROM "players" ORDER BY points DESC
+  Rendered players/index.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 21ms (Views: 18.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 124.35.46.4 at Tue Feb 12 18:17:59 +0900 2013
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 124.35.46.4 at Tue Feb 12 18:17:59 +0900 2013
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 124.35.46.4 at Tue Feb 12 18:17:59 +0900 2013
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/players.css?body=1" for 124.35.46.4 at Tue Feb 12 18:17:59 +0900 2013
+Served asset /players.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/top.css?body=1" for 124.35.46.4 at Tue Feb 12 18:17:59 +0900 2013
+Served asset /top.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 124.35.46.4 at Tue Feb 12 18:17:59 +0900 2013
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/players.js?body=1" for 124.35.46.4 at Tue Feb 12 18:17:59 +0900 2013
+Served asset /players.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/top.js?body=1" for 124.35.46.4 at Tue Feb 12 18:17:59 +0900 2013
+Served asset /top.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 124.35.46.4 at Tue Feb 12 18:17:59 +0900 2013
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/keion/ui.jpg" for 124.35.46.4 at Tue Feb 12 18:18:00 +0900 2013
+Served asset /keion/ui.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/keion/mio.jpg" for 124.35.46.4 at Tue Feb 12 18:18:00 +0900 2013
+Served asset /keion/mio.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/keion/azu.jpg" for 124.35.46.4 at Tue Feb 12 18:18:00 +0900 2013
+Served asset /keion/azu.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/keion/yui.jpg" for 124.35.46.4 at Tue Feb 12 18:18:00 +0900 2013
+Served asset /keion/yui.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/keion/mugi.jpg" for 124.35.46.4 at Tue Feb 12 18:18:00 +0900 2013
+Served asset /keion/mugi.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/keion/ritsu.jpg" for 124.35.46.4 at Tue Feb 12 18:18:00 +0900 2013
+Served asset /keion/ritsu.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/players/113629430/vote" for 124.35.46.4 at Tue Feb 12 18:18:00 +0900 2013
+Processing by PlayersController#vote as HTML
+  Parameters: {"id"=>"113629430"}
+  [1m[36mPlayer Load (0.2ms)[0m  [1mSELECT "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", "113629430"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mUPDATE "players" SET "points" = 15, "updated_at" = '2013-02-12 09:18:00.555507' WHERE "players"."id" = 113629430[0m
+  [1m[35m (23.1ms)[0m  commit transaction
+Redirected to http://otiai10.com:3002/players
+Completed 302 Found in 31ms (ActiveRecord: 23.7ms)
+
+
+Started GET "/players" for 124.35.46.4 at Tue Feb 12 18:18:00 +0900 2013
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.5ms)[0m  [1mSELECT "players".* FROM "players" ORDER BY points DESC[0m
+  Rendered players/index.html.erb within layouts/application (13.8ms)
+Completed 200 OK in 27ms (Views: 24.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 124.35.46.4 at Tue Feb 12 18:18:00 +0900 2013
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 124.35.46.4 at Tue Feb 12 18:18:00 +0900 2013
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 124.35.46.4 at Tue Feb 12 18:18:00 +0900 2013
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/top.css?body=1" for 124.35.46.4 at Tue Feb 12 18:18:00 +0900 2013
+Served asset /top.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/players.css?body=1" for 124.35.46.4 at Tue Feb 12 18:18:00 +0900 2013
+Served asset /players.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 124.35.46.4 at Tue Feb 12 18:18:00 +0900 2013
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/players.js?body=1" for 124.35.46.4 at Tue Feb 12 18:18:00 +0900 2013
+Served asset /players.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/top.js?body=1" for 124.35.46.4 at Tue Feb 12 18:18:00 +0900 2013
+Served asset /top.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 124.35.46.4 at Tue Feb 12 18:18:00 +0900 2013
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/keion/mio.jpg" for 124.35.46.4 at Tue Feb 12 18:18:00 +0900 2013
+Served asset /keion/mio.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/keion/ritsu.jpg" for 124.35.46.4 at Tue Feb 12 18:18:00 +0900 2013
+Served asset /keion/ritsu.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/keion/azu.jpg" for 124.35.46.4 at Tue Feb 12 18:18:00 +0900 2013
+Served asset /keion/azu.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/keion/mugi.jpg" for 124.35.46.4 at Tue Feb 12 18:18:00 +0900 2013
+Served asset /keion/mugi.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/keion/yui.jpg" for 124.35.46.4 at Tue Feb 12 18:18:00 +0900 2013
+Served asset /keion/yui.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/keion/ui.jpg" for 124.35.46.4 at Tue Feb 12 18:18:00 +0900 2013
+Served asset /keion/ui.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/players/113629430/vote" for 124.35.46.4 at Tue Feb 12 18:18:01 +0900 2013
+Processing by PlayersController#vote as HTML
+  Parameters: {"id"=>"113629430"}
+  [1m[35mPlayer Load (0.2ms)[0m  SELECT "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", "113629430"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  UPDATE "players" SET "points" = 16, "updated_at" = '2013-02-12 09:18:01.546505' WHERE "players"."id" = 113629430
+  [1m[36m (3.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://otiai10.com:3002/players
+Completed 302 Found in 12ms (ActiveRecord: 3.9ms)
+
+
+Started GET "/players" for 124.35.46.4 at Tue Feb 12 18:18:01 +0900 2013
+Processing by PlayersController#index as HTML
+  [1m[35mPlayer Load (0.7ms)[0m  SELECT "players".* FROM "players" ORDER BY points DESC
+  Rendered players/index.html.erb within layouts/application (16.9ms)
+Completed 200 OK in 33ms (Views: 29.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 124.35.46.4 at Tue Feb 12 18:18:01 +0900 2013
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/players.css?body=1" for 124.35.46.4 at Tue Feb 12 18:18:01 +0900 2013
+Served asset /players.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 124.35.46.4 at Tue Feb 12 18:18:01 +0900 2013
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 124.35.46.4 at Tue Feb 12 18:18:01 +0900 2013
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/top.css?body=1" for 124.35.46.4 at Tue Feb 12 18:18:01 +0900 2013
+Served asset /top.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 124.35.46.4 at Tue Feb 12 18:18:01 +0900 2013
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/players.js?body=1" for 124.35.46.4 at Tue Feb 12 18:18:01 +0900 2013
+Served asset /players.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/top.js?body=1" for 124.35.46.4 at Tue Feb 12 18:18:01 +0900 2013
+Served asset /top.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 124.35.46.4 at Tue Feb 12 18:18:01 +0900 2013
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/keion/ritsu.jpg" for 124.35.46.4 at Tue Feb 12 18:18:01 +0900 2013
+Served asset /keion/ritsu.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/keion/azu.jpg" for 124.35.46.4 at Tue Feb 12 18:18:02 +0900 2013
+Served asset /keion/azu.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/keion/ui.jpg" for 124.35.46.4 at Tue Feb 12 18:18:02 +0900 2013
+Served asset /keion/ui.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/keion/mio.jpg" for 124.35.46.4 at Tue Feb 12 18:18:02 +0900 2013
+Served asset /keion/mio.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/keion/mugi.jpg" for 124.35.46.4 at Tue Feb 12 18:18:02 +0900 2013
+Served asset /keion/mugi.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/keion/yui.jpg" for 124.35.46.4 at Tue Feb 12 18:18:02 +0900 2013
+Served asset /keion/yui.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/players/113629430/vote" for 124.35.46.4 at Tue Feb 12 18:18:02 +0900 2013
+Processing by PlayersController#vote as HTML
+  Parameters: {"id"=>"113629430"}
+  [1m[36mPlayer Load (0.2ms)[0m  [1mSELECT "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", "113629430"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mUPDATE "players" SET "points" = 17, "updated_at" = '2013-02-12 09:18:02.383825' WHERE "players"."id" = 113629430[0m
+  [1m[35m (6.4ms)[0m  commit transaction
+Redirected to http://otiai10.com:3002/players
+Completed 302 Found in 15ms (ActiveRecord: 7.1ms)
+
+
+Started GET "/players" for 124.35.46.4 at Tue Feb 12 18:18:02 +0900 2013
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.5ms)[0m  [1mSELECT "players".* FROM "players" ORDER BY points DESC[0m
+  Rendered players/index.html.erb within layouts/application (18.2ms)
+Completed 200 OK in 36ms (Views: 32.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 124.35.46.4 at Tue Feb 12 18:18:02 +0900 2013
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 124.35.46.4 at Tue Feb 12 18:18:02 +0900 2013
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 124.35.46.4 at Tue Feb 12 18:18:02 +0900 2013
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 124.35.46.4 at Tue Feb 12 18:18:02 +0900 2013
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/players.css?body=1" for 124.35.46.4 at Tue Feb 12 18:18:02 +0900 2013
+Served asset /players.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/top.css?body=1" for 124.35.46.4 at Tue Feb 12 18:18:02 +0900 2013
+Served asset /top.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/players.js?body=1" for 124.35.46.4 at Tue Feb 12 18:18:02 +0900 2013
+Served asset /players.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 124.35.46.4 at Tue Feb 12 18:18:02 +0900 2013
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/top.js?body=1" for 124.35.46.4 at Tue Feb 12 18:18:02 +0900 2013
+Served asset /top.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/keion/ui.jpg" for 124.35.46.4 at Tue Feb 12 18:18:02 +0900 2013
+Served asset /keion/ui.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/keion/mugi.jpg" for 124.35.46.4 at Tue Feb 12 18:18:02 +0900 2013
+Served asset /keion/mugi.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/keion/mio.jpg" for 124.35.46.4 at Tue Feb 12 18:18:02 +0900 2013
+Served asset /keion/mio.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/keion/yui.jpg" for 124.35.46.4 at Tue Feb 12 18:18:02 +0900 2013
+Served asset /keion/yui.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/keion/azu.jpg" for 124.35.46.4 at Tue Feb 12 18:18:02 +0900 2013
+Served asset /keion/azu.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/keion/ritsu.jpg" for 124.35.46.4 at Tue Feb 12 18:18:02 +0900 2013
+Served asset /keion/ritsu.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/players/113629430/vote" for 124.35.46.4 at Tue Feb 12 18:18:03 +0900 2013
+Processing by PlayersController#vote as HTML
+  Parameters: {"id"=>"113629430"}
+  [1m[35mPlayer Load (0.3ms)[0m  SELECT "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", "113629430"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  UPDATE "players" SET "points" = 18, "updated_at" = '2013-02-12 09:18:03.414266' WHERE "players"."id" = 113629430
+  [1m[36m (9.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://otiai10.com:3002/players
+Completed 302 Found in 20ms (ActiveRecord: 10.7ms)
+
+
+Started GET "/players" for 124.35.46.4 at Tue Feb 12 18:18:03 +0900 2013
+Processing by PlayersController#index as HTML
+  [1m[35mPlayer Load (0.5ms)[0m  SELECT "players".* FROM "players" ORDER BY points DESC
+  Rendered players/index.html.erb within layouts/application (14.6ms)
+Completed 200 OK in 29ms (Views: 25.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 124.35.46.4 at Tue Feb 12 18:18:03 +0900 2013
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 124.35.46.4 at Tue Feb 12 18:18:03 +0900 2013
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/players.css?body=1" for 124.35.46.4 at Tue Feb 12 18:18:03 +0900 2013
+Served asset /players.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 124.35.46.4 at Tue Feb 12 18:18:03 +0900 2013
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 124.35.46.4 at Tue Feb 12 18:18:03 +0900 2013
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/top.css?body=1" for 124.35.46.4 at Tue Feb 12 18:18:03 +0900 2013
+Served asset /top.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/top.js?body=1" for 124.35.46.4 at Tue Feb 12 18:18:03 +0900 2013
+Served asset /top.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/players.js?body=1" for 124.35.46.4 at Tue Feb 12 18:18:03 +0900 2013
+Served asset /players.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 124.35.46.4 at Tue Feb 12 18:18:03 +0900 2013
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/keion/ritsu.jpg" for 124.35.46.4 at Tue Feb 12 18:18:03 +0900 2013
+Served asset /keion/ritsu.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/keion/mugi.jpg" for 124.35.46.4 at Tue Feb 12 18:18:03 +0900 2013
+Served asset /keion/mugi.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/keion/mio.jpg" for 124.35.46.4 at Tue Feb 12 18:18:03 +0900 2013
+Served asset /keion/mio.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/keion/azu.jpg" for 124.35.46.4 at Tue Feb 12 18:18:03 +0900 2013
+Served asset /keion/azu.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/keion/yui.jpg" for 124.35.46.4 at Tue Feb 12 18:18:03 +0900 2013
+Served asset /keion/yui.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/keion/ui.jpg" for 124.35.46.4 at Tue Feb 12 18:18:03 +0900 2013
+Served asset /keion/ui.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/" for 124.35.46.4 at Tue Feb 12 19:34:20 +0900 2013
+Processing by TopController#index as HTML
+  [1m[36mPlayer Load (0.2ms)[0m  [1mSELECT "players".* FROM "players" [0m
+  Rendered top/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 38ms (Views: 11.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 124.35.46.4 at Tue Feb 12 19:34:21 +0900 2013
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 124.35.46.4 at Tue Feb 12 19:34:21 +0900 2013
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 124.35.46.4 at Tue Feb 12 19:34:21 +0900 2013
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/top.css?body=1" for 124.35.46.4 at Tue Feb 12 19:34:21 +0900 2013
+Served asset /top.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/players.css?body=1" for 124.35.46.4 at Tue Feb 12 19:34:21 +0900 2013
+Served asset /players.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 124.35.46.4 at Tue Feb 12 19:34:21 +0900 2013
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/players.js?body=1" for 124.35.46.4 at Tue Feb 12 19:34:21 +0900 2013
+Served asset /players.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/top.js?body=1" for 124.35.46.4 at Tue Feb 12 19:34:21 +0900 2013
+Served asset /top.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 124.35.46.4 at Tue Feb 12 19:34:21 +0900 2013
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logos/shiraishi.jpg" for 124.35.46.4 at Tue Feb 12 19:34:21 +0900 2013
+Served asset /logos/shiraishi.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/players" for 124.35.46.4 at Tue Feb 12 19:34:22 +0900 2013
+Processing by PlayersController#index as HTML
+  [1m[35mPlayer Load (1.6ms)[0m  SELECT "players".* FROM "players" ORDER BY points DESC
+  Rendered players/index.html.erb within layouts/application (18.2ms)
+Completed 200 OK in 125ms (Views: 29.5ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 124.35.46.4 at Tue Feb 12 19:34:22 +0900 2013
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 124.35.46.4 at Tue Feb 12 19:34:22 +0900 2013
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/players.css?body=1" for 124.35.46.4 at Tue Feb 12 19:34:22 +0900 2013
+Served asset /players.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/top.css?body=1" for 124.35.46.4 at Tue Feb 12 19:34:22 +0900 2013
+Served asset /top.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 124.35.46.4 at Tue Feb 12 19:34:22 +0900 2013
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 124.35.46.4 at Tue Feb 12 19:34:22 +0900 2013
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/players.js?body=1" for 124.35.46.4 at Tue Feb 12 19:34:22 +0900 2013
+Served asset /players.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/top.js?body=1" for 124.35.46.4 at Tue Feb 12 19:34:22 +0900 2013
+Served asset /top.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 124.35.46.4 at Tue Feb 12 19:34:22 +0900 2013
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/keion/ritsu.jpg" for 124.35.46.4 at Tue Feb 12 19:34:22 +0900 2013
+Served asset /keion/ritsu.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/keion/ui.jpg" for 124.35.46.4 at Tue Feb 12 19:34:22 +0900 2013
+Served asset /keion/ui.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/keion/mio.jpg" for 124.35.46.4 at Tue Feb 12 19:34:22 +0900 2013
+Served asset /keion/mio.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/keion/yui.jpg" for 124.35.46.4 at Tue Feb 12 19:34:22 +0900 2013
+Served asset /keion/yui.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/keion/azu.jpg" for 124.35.46.4 at Tue Feb 12 19:34:22 +0900 2013
+Served asset /keion/azu.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/keion/mugi.jpg" for 124.35.46.4 at Tue Feb 12 19:34:22 +0900 2013
+Served asset /keion/mugi.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/players/113629430/vote" for 124.35.46.4 at Tue Feb 12 19:34:24 +0900 2013
+Processing by PlayersController#vote as HTML
+  Parameters: {"id"=>"113629430"}
+  [1m[36mPlayer Load (0.4ms)[0m  [1mSELECT "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", "113629430"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Completed 500 Internal Server Error in 4ms
+
+ActiveModel::MassAssignmentSecurity::Error (Can't mass-assign protected attributes: points):
+  app/controllers/players_controller.rb:95:in `vote'
+
+
+  Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.2.11/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.7ms)
+  Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.2.11/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.8ms)
+  Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.2.11/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.2ms)
+
+
+Started GET "/players" for 124.35.46.4 at Tue Feb 12 19:34:42 +0900 2013
+Processing by PlayersController#index as HTML
+  [1m[35mPlayer Load (0.4ms)[0m  SELECT "players".* FROM "players" ORDER BY points DESC
+  Rendered players/index.html.erb within layouts/application (15.0ms)
+Completed 200 OK in 54ms (Views: 28.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/players/113629430/vote" for 124.35.46.4 at Tue Feb 12 19:34:44 +0900 2013
+Processing by PlayersController#vote as HTML
+  Parameters: {"id"=>"113629430"}
+  [1m[36mPlayer Load (0.4ms)[0m  [1mSELECT "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", "113629430"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mUPDATE "players" SET "points" = 19, "updated_at" = '2013-02-12 10:34:44.308049' WHERE "players"."id" = 113629430[0m
+  [1m[35m (5.3ms)[0m  commit transaction
+Redirected to http://otiai10.com:3002/players
+Completed 302 Found in 14ms (ActiveRecord: 6.2ms)
+
+
+Started GET "/players" for 124.35.46.4 at Tue Feb 12 19:34:44 +0900 2013
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (0.3ms)[0m  [1mSELECT "players".* FROM "players" ORDER BY points DESC[0m
+  Rendered players/index.html.erb within layouts/application (10.3ms)
+Completed 200 OK in 20ms (Views: 18.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 124.35.46.4 at Tue Feb 12 19:34:44 +0900 2013
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 124.35.46.4 at Tue Feb 12 19:34:44 +0900 2013
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 124.35.46.4 at Tue Feb 12 19:34:44 +0900 2013
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/players.css?body=1" for 124.35.46.4 at Tue Feb 12 19:34:44 +0900 2013
+Served asset /players.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 124.35.46.4 at Tue Feb 12 19:34:44 +0900 2013
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/top.css?body=1" for 124.35.46.4 at Tue Feb 12 19:34:44 +0900 2013
+Served asset /top.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/players.js?body=1" for 124.35.46.4 at Tue Feb 12 19:34:44 +0900 2013
+Served asset /players.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/top.js?body=1" for 124.35.46.4 at Tue Feb 12 19:34:44 +0900 2013
+Served asset /top.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 124.35.46.4 at Tue Feb 12 19:34:44 +0900 2013
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/keion/mio.jpg" for 124.35.46.4 at Tue Feb 12 19:34:44 +0900 2013
+Served asset /keion/mio.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/keion/ritsu.jpg" for 124.35.46.4 at Tue Feb 12 19:34:44 +0900 2013
+Served asset /keion/ritsu.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/keion/ui.jpg" for 124.35.46.4 at Tue Feb 12 19:34:44 +0900 2013
+Served asset /keion/ui.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/keion/yui.jpg" for 124.35.46.4 at Tue Feb 12 19:34:44 +0900 2013
+Served asset /keion/yui.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/keion/azu.jpg" for 124.35.46.4 at Tue Feb 12 19:34:44 +0900 2013
+Served asset /keion/azu.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/keion/mugi.jpg" for 124.35.46.4 at Tue Feb 12 19:34:44 +0900 2013
+Served asset /keion/mugi.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/players/113629430/vote" for 124.35.46.4 at Tue Feb 12 19:34:45 +0900 2013
+Processing by PlayersController#vote as HTML
+  Parameters: {"id"=>"113629430"}
+  [1m[35mPlayer Load (0.2ms)[0m  SELECT "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", "113629430"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  UPDATE "players" SET "points" = 20, "updated_at" = '2013-02-12 10:34:45.603981' WHERE "players"."id" = 113629430
+  [1m[36m (2.4ms)[0m  [1mcommit traA server is already running. Check /home/hiromu/rails/projects/gangvote/tmp/pids/server.pid.
+=> Booting WEBrick
+=> Rails 3.2.11 application starting in development on http://0.0.0.0:3002
+=> Call with -d to detach
+=> Ctrl-C to shutdown server
+Exiting
+A server is already running. Check /home/hiromu/rails/projects/gangvote/tmp/pids/server.pid.
+=> Booting WEBrick
+=> Rails 3.2.11 application starting in development on http://0.0.0.0:3002
+=> Call with -d to detach
+=> Ctrl-C to shutdown server
+Exiting
+kill: No such process
+ERROR: garbage process ID "-p".
+Usage:
+  kill pid ...              Send SIGTERM to every process listed.
+  kill signal pid ...       Send a signal to every process listed.
+  kill -s signal pid ...    Send a signal to every process listed.
+  kill -l                   List all signal names.
+  kill -L                   List all signal names in a nice table.
+  kill -l signal            Convert between signal numbers and names.
+kill: No such process
+ERROR: garbage process ID "-p".
+Usage:
+  kill pid ...              Send SIGTERM to every process listed.
+  kill signal pid ...       Send a signal to every process listed.
+  kill -s signal pid ...    Send a signal to every process listed.
+  kill -l                   List all signal names.
+  kill -L                   List all signal names in a nice table.
+  kill -l signal            Convert between signal numbers and names.
+kill: No such process
+ERROR: garbage process ID "-p".
+Usage:
+  kill pid ...              Send SIGTERM to every process listed.
+  kill signal pid ...       Send a signal to every process listed.
+  kill -s signal pid ...    Send a signal to every process listed.
+  kill -l                   List all signal names.
+  kill -L                   List all signal names in a nice table.
+  kill -l signal            Convert between signal numbers and names.
+[2013-02-12 20:21:21] INFO  WEBrick 1.3.1
+[2013-02-12 20:21:21] INFO  ruby 1.8.7 (2010-08-16) [i486-linux]
+[2013-02-12 20:21:21] INFO  WEBrick::HTTPServer#start: pid=7126 port=3002

@@ -1,0 +1,67 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  number: 11
+  name: '平沢唯'
+  kana: 'ひらさわ ゆい'
+  position: 1
+  grade: 3
+  imgurl: 'keion/yui.jpg'
+  introduction: 'ちょっと抜けてる軽音部のボケたんとう'
+  from: 1
+  info: 
+
+two:
+  number: 22
+  name: '秋山澪'
+  kana: 'あきやま みお'
+  position: 2
+  grade: 3
+  imgurl: 'keion/mio.png'
+  introduction: 'しっかりものの黒髪ロング'
+  from: 1
+  info:
+
+three:
+  number: 33
+  name: '田井中律'
+  kana: 'たいなか りつ'
+  position: 3
+  grade: 3
+  imgurl: 'keion/ritsu.png'
+  introduction: 'いつも元気な軽音部の部長'
+  from: 1
+  info:
+
+four:
+  number: 44
+  name: '琴吹紬'
+  kana: 'ことぶき つむぎ'
+  position: 4
+  grade: 3
+  imgurl: 'keion/mugi.png'
+  introduction: 'ふわふわ天然たくあん眉毛'
+  from: 1
+  info:
+
+five:
+  number: 55
+  name: '中野梓'
+  kana: 'なかの あずさ'
+  position: 1
+  grade: 2
+  imgurl: 'keion/azu.png'
+  introduction: 'あずにゃんぺろぺろぺろぺろぺろぺろぺろぺろぺろぺろぺろぺろぺろぺろぺろぺろぺろぺろ'
+  from: 1
+  info:
+
+six:
+  number: 66
+  name: '平沢憂'
+  kana: 'ひらさわ うい'
+  position: 4
+  grade: 2
+  imgurl: 'keion/ui.png'
+  introduction: 'お姉ちゃん想いの天使まじ天使'
+  from: 1
+  info:
