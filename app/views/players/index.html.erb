@@ -1,3 +1,11 @@
+<h4><%= link_to('TOP', {:controller => 'top'}) %></h4>
+<h3>
+  <% if @vote_left.to_i < 1 %>
+    <%= @user_name %>@もう投票できない
+  <% else %>
+    <%= @user_name %>@あと<%= @vote_left %>回
+  <% end %>
+</h3>
 <h1>Players List</h1>
 <h3><%= @mess %></h3>
 <table>
@@ -25,7 +33,13 @@
     <td><%= GRADES[player.grade] %></td>
     <td><%= image_tag player.imgurl, :class => 'prof-list' %></td>
     <td><%= player.introduction %></td>
-    <td><a href="players/<%= player.id %>/vote"><button>VOTE</button></a></td>
+    <td>
+      <!--a href="players/<%= player.id %>/vote"><button>VOTE</button</a-->
+      <%= form_tag({ :action => 'vote' }, { :class => 'hoge' }) do %>
+        <%= hidden_field_tag('id', player.id) %>
+        <%= submit_tag 'VOTE' %>
+      <% end %>
+    </td>
     <td><% if player.points.nil? %>0<% else %><%= player.points %><% end %></td>
     <!--td><%= player.from %></td-->
     <!--td><%= player.info %></td-->
