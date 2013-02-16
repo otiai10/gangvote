@@ -1,1 +1,11 @@
 <a href="/players"><%= image_tag 'logos/shiraishi.jpg', :class => 'prof-img' %></a>
+<% if @user_name.nil? %>
+  <%= form_tag({ :controller => 'account', :action => 'login' }, { :id => 'ini-form', :class => 'form' }) do %>
+    <%= text_field_tag 'user_name', '', { :size => 50, :placeholder => 'ユーザ名を登録' } %>
+    <%= submit_tag '登録' %>
+  <% end %>
+  <small>このユーザ名は24時間だけ有効です。</small>
+<% else %>
+  <h3><%= @user_name %>として参加中</h3>
+  <h4><%= link_to('Players', {:controller => 'players'}) %></h4>
+<% end %> 

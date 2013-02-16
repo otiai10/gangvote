@@ -2,7 +2,9 @@ class PlayersController < ApplicationController
   # GET /players
   # GET /players.json
   def index
-    @mess = 'indexを通ってきました'
+    #@mess = 'indexを通ってきました'
+    @user_name = cookies[:user_name]
+    @vote_left = cookies[:vote_left]
     @players = Player.find(:all, :order => "points DESC")
 
     respond_to do |format|
@@ -84,18 +86,40 @@ class PlayersController < ApplicationController
 
   # POST /players/1/vote
   def vote
-    @mess = 'voteを通ってきました'
-    @player = Player.find(params[:id])
-    points = @player.points
-    unless points.nil?
-      points = points + 1
+    @user_name = cookies[:user_name]
+    @vote_left = cookies[:vote_left]
+    logger.debug @vote_left
+    unless @user_name.nil?
+      unless @vote_left.to_i < 1
+        _vote
+        @mess = '投票しました'
+      else
+        @mess = '投票回数が0回です'
+      end
     else
-      points = 1
+      @mess = 'まずユーザ登録してください'
     end
-    @player.update_attributes( :points => points )
-    respond_to do |format|
-      format.html { redirect_to players_url }
-      format.json { head :no_content }
-    end
+    #respond_to do |format|
+    #  format.html { redirect_to players_url }
+    #  format.json { head :no_content }
+    #end
+    # messをcookie使ってやり取りするならこの処理はいらん
+    @players = Player.find(:all, :order => "points DESC")
+    @vote_left = cookies[:vote_left]
+    render 'players/index'
   end
+end
+
+def _vote()
+  @player = Player.find(params[:id])
+  points = @player.points
+  unless points.nil?
+    points = points + 1
+  else
+    points = 1
+  end
+  @player.update_attributes( :points => points )
+  new_vote_left = @vote_left.to_i - 1
+  cookies[:vote_left] = { :value => new_vote_left }
+  logger.debug new_vote_left
 end
