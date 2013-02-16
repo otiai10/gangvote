@@ -1,5 +1,5 @@
 class TopController < ApplicationController
   def index
-    @test = Player.all
+    @user_name = cookies[:user_name]
   end
 end
