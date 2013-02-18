@@ -20,9 +20,11 @@
       <li>
         <div class="login-info">
           <p>3月31日 京都大学vs関西学院大学</p>
+          <a href="/players">
           <% unless @user_name.nil? %>
-            <p><%= @user_name %>として参加中</p>
+            <%= @user_name %>として参加中
           <% end %>
+          </a>
         </div>
       </li>
     </ul>

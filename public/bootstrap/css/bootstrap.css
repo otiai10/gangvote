@@ -2008,7 +2008,7 @@ table {
 
 .table th,
 .table td {
-  padding: 8px;
+  /* padding: 8px; myTune */
   line-height: 20px;
   text-align: left;
   vertical-align: top;
@@ -5550,7 +5550,7 @@ input[type="submit"].btn.btn-mini {
 
 .thumbnail {
   display: block;
-  padding: 4px;
+  /* padding: 4px; */
   line-height: 20px;
   border: 1px solid #ddd;
   -webkit-border-radius: 4px;

@@ -8,6 +8,10 @@ class PlayersController < ApplicationController
     cookies[:mess] = { :value => '' }
 
     @players = Player.find(:all, :order => "points DESC")
+    @players.each do |player|
+      player[:p_twenty] = player.points.to_i.div(20)
+      player[:p_under_twenty] = player.points.to_i.%20
+    end
 
     respond_to do |format|
       format.html # index.html.erb
@@ -21,7 +25,7 @@ class PlayersController < ApplicationController
     @player = Player.find(params[:id])
 
     respond_to do |format|
-      format.html # show.html.erb
+      format.html { render :layout => true }
       format.json { render :json => @player }
     end
   end

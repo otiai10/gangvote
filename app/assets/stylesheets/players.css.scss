@@ -3,6 +3,38 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 /***/
-img.prof-list {
-  width: 50px;
+div.contents {
+  table {
+    tbody {
+      tr {
+        td.prof {
+          width: 30%;
+          img.prof-img {
+            width: 100%;
+            margin-bottom: 20px;
+          }
+        }
+        td.info {
+          width: 40%;
+          span.backnumber {
+            font-size: 3em;
+            color: #666;
+            font-weight: bold;
+          }
+          span.player-name {
+            font-size: 1.4em;
+          }
+        }
+        td.stars {
+          width: 30%;
+          img.img-star {
+            width: 5px;
+          }
+          img.img-star-twenty {
+            width: 14px;
+          }
+        }
+      }
+    }
+  }
 }
