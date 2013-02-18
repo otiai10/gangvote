@@ -23,7 +23,10 @@ class PlayersController < ApplicationController
   # GET /players/1.json
   def show
     @player = Player.find(params[:id])
-
+    @user_name = cookies[:user_name]
+    @vote_left = cookies[:vote_left]
+    @player[:p_twenty] = @player.points.to_i.div(20)
+    @player[:p_under_twenty] = @player.points.to_i.%20
     respond_to do |format|
       format.html { render :layout => true }
       format.json { render :json => @player }

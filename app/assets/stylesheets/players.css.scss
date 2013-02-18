@@ -2,6 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@mixin sharp {
+  color: #666;
+  font-weight: bold;
+  font-style: italic;
+}
 /***/
 div.contents {
   table {
@@ -16,10 +21,12 @@ div.contents {
         }
         td.info {
           width: 40%;
+          span.sharp {
+            @include sharp;
+          }
           span.backnumber {
             font-size: 3em;
-            color: #666;
-            font-weight: bold;
+            @include sharp;
           }
           span.player-name {
             font-size: 1.4em;
@@ -34,6 +41,31 @@ div.contents {
             width: 14px;
           }
         }
+      }
+    }
+  }
+  table.show {
+    tr {
+      td.prof {
+        width: 65%;
+      }
+      td.info {
+        text-align: right;
+        width: 35%;
+        span.backnumber {
+          font-size: 5em;
+          line-height: 1em;
+        }
+      }
+      td.introduction {
+        width: 100%;
+      }
+      td.stars {
+        width:65%;
+      }
+      td.vote {
+        text-align: right;
+        width:35%;
       }
     }
   }

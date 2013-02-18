@@ -5,12 +5,12 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
-  <link rel="stylesheet" href="bootstrap/css/bootstrap.css" />
+  <!--link rel="stylesheet" href="bootstrap/css/bootstrap.css" /-->
   <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
 </head>
 <body>
 <!-- twitterbootstrap navbar -->
-<div class="navbar navbar-inverse">
+<div class="navbar navbar-inverse navbar-fixed-top">
   <div class="navbar-inner">
     <%= link_to('theMAN', {:controller => 'top'}, {:class => 'brand'}) %>
     <ul class="nav pull-right">
@@ -32,7 +32,9 @@
 </div>
 <!-- /twitterbootstrap navbar -->
 <div class="contents">
+<div id="top-space"></div>
 <%= yield %>
+<div id="top-space"></div>
 </div>
 </body>
 </html>

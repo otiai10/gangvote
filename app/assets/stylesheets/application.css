@@ -18,8 +18,10 @@ html, body {
 }
 
 body {
-  background-image: url('http://pds.exblog.jp/pds/1/200911/09/31/a0095531_22452614.jpg');
+  /* background-image: url('http://pds.exblog.jp/pds/1/200911/09/31/a0095531_22452614.jpg'); */
+  background-image: url('/assets/src/background.jpg');
   background-size: cover;
+  background-attachment: fixed;
 }
 
 div {
@@ -29,8 +31,13 @@ div {
       -ms-box-sizing: border-box;
           box-sizing: border-box;
 }
-
-div.login-info > p {
+div#top-space {
+  height: 41px;
+}
+div.login-info {
+  text-align: right;
+}
+div.login-info>p {
   text-align: right;
   /* color: red; */
   font-size: 1em;

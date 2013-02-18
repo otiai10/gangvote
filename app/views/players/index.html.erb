@@ -26,7 +26,7 @@
     </td>
     <!-- info -->
     <td class="info">
-      #<span class="backnumber"><%= player.number %></span>
+      <span class="sharp">#</span><span class="backnumber"><%= player.number %></span>
       .<%= POSITIONS[player.position] %>
       .<%= GRADES[player.grade] %><br>
       <span class="player-name"><%= player.name %></span><br>
@@ -63,4 +63,4 @@
 
 <br />
 
-<%= link_to 'New Player', new_player_path %>
+<!-- <%= link_to 'New Player', new_player_path %> -->
