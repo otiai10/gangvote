@@ -1,11 +1,27 @@
-<a href="/players"><%= image_tag 'logos/shiraishi.jpg', :class => 'prof-img' %></a>
-<% if @user_name.nil? %>
-  <%= form_tag({ :controller => 'account', :action => 'login' }, { :id => 'ini-form', :class => 'form' }) do %>
-    <%= text_field_tag 'user_name', '', { :size => 50, :placeholder => 'ユーザ名を登録' } %>
-    <%= submit_tag '登録' %>
-  <% end %>
-  <small>このユーザ名は24時間だけ有効です。</small>
-<% else %>
-  <h3><%= @user_name %>として参加中</h3>
-  <h4><%= link_to('Players', {:controller => 'players'}) %></h4>
-<% end %> 
+<div class="row">
+  <div class="span9">
+    <p>あなたの投票がMVPを決める</p>
+    <p class="lead">
+      You<br>Decide<br>the MAN
+    </p>
+  </div>
+</div>
+<div class="row">
+  <div class="span9 game-title">
+    <p>3月31日:京都大学vs関西学院大学</p>
+  </div>
+</div>
+<div class="row">
+  <!-- a href="/players"><%= image_tag 'logos/shiraishi.jpg', :class => 'prof-img' %></a -->
+  <% if @user_name.nil? %>
+    <%= form_tag({ :controller => 'account', :action => 'login' }, { :id => 'ini-form' }) do %>
+      <%= text_field_tag 'user_name', '', { :size => 50, :placeholder => 'ユーザ名を登録' } %><br>
+      <%= submit_tag '参加', { :class => 'btn'} %><br>
+      <small>※ MVP投票集計以外の目的には使用されません</small><br>
+      <small>※ このユーザ名情報は24時間後に破棄されます</small>
+    <% end %>
+  <% else %>
+    <h3><%= @user_name %>として参加中</h3>
+    <h4><%= link_to('Players', {:controller => 'players'}) %></h4>
+  <% end %> 
+</div>

@@ -1,4 +1,57 @@
-<p id="notice"><%= notice %></p>
+<table class="table show">
+  <tr>
+    <!-- dbg -->
+    <!-- td class="dbg">
+    </td -->
+    <!-- thumbnail -->
+    <td class="prof">
+      <%= link_to image_tag(@player.imgurl, :class => 'prof-img'), @player %>
+    </td>
+    <!-- info -->
+    <td class="info">
+      <span class="sharp">#</span><span class="backnumber"><%= @player.number %></span>
+      <br>.<%= POSITIONS[@player.position] %>
+      .<%= GRADES[@player.grade] %><br>
+      <span class="player-name"><%= @player.name %></span><br>
+      <small><%= @player.kana %></small><br>
+      <b>出身:</b>
+      <%= REGION[@player.from] %>
+      <!-- <%= link_to 'Show', @player %> -->
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="introduction">
+      <%= @player.introduction %>
+    </td>
+  </tr>
+  <tr>
+    <!-- stars -->
+    <td class="stars">
+      <!-- current -->
+      <% if @player.points.nil? %>
+        0
+      <% else %>
+        <% @player.p_twenty.to_i.times do %>
+          <%= image_tag 'src/star.gif', :class => 'img-star-twenty' %>
+        <% end %>
+        <% @player.p_under_twenty.to_i.times do %>
+          <%= image_tag 'src/star.gif', :class => 'img-star' %>
+        <% end %>
+        <small><%= @player.points %></small>
+      <% end %>
+    </td>
+    <td class="vote">
+      <!-- vote -->
+      <!--a href="players/<%= @player.id %>/vote"><button>VOTE</button</a-->
+      <%= form_tag({ :action => 'vote' }, { :class => 'hoge' }) do %>
+        <%= hidden_field_tag('id', @player.id) %>
+        <%= submit_tag 'VOTE', { :class => 'btn btn-info btn-mini' } %>
+      <% end %>
+    </td>
+    <!--td><%= link_to 'Edit', edit_player_path(@player) %></td-->
+    <!--td><%= link_to 'Destroy', @player, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td-->
+  </tr>
+</table>
 
 <p>
   <b>Number:</b>
@@ -46,5 +99,5 @@
 </p>
 
 
-<%= link_to 'Edit', edit_player_path(@player) %> |
+<!-- <%= link_to 'Edit', edit_player_path(@player) %> | -->
 <%= link_to 'Back', players_path %>
