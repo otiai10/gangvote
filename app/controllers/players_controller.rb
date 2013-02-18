@@ -2,10 +2,16 @@ class PlayersController < ApplicationController
   # GET /players
   # GET /players.json
   def index
-    #@mess = 'indexを通ってきました'
+    @mess      = cookies[:mess]
     @user_name = cookies[:user_name]
     @vote_left = cookies[:vote_left]
+    cookies[:mess] = { :value => '' }
+
     @players = Player.find(:all, :order => "points DESC")
+    @players.each do |player|
+      player[:p_twenty] = player.points.to_i.div(20)
+      player[:p_under_twenty] = player.points.to_i.%20
+    end
 
     respond_to do |format|
       format.html # index.html.erb
@@ -17,9 +23,12 @@ class PlayersController < ApplicationController
   # GET /players/1.json
   def show
     @player = Player.find(params[:id])
-
+    @user_name = cookies[:user_name]
+    @vote_left = cookies[:vote_left]
+    @player[:p_twenty] = @player.points.to_i.div(20)
+    @player[:p_under_twenty] = @player.points.to_i.%20
     respond_to do |format|
-      format.html # show.html.erb
+      format.html { render :layout => true }
       format.json { render :json => @player }
     end
   end
@@ -86,27 +95,31 @@ class PlayersController < ApplicationController
 
   # POST /players/1/vote
   def vote
+    @player = Player.find(params[:id])
     @user_name = cookies[:user_name]
     @vote_left = cookies[:vote_left]
     logger.debug @vote_left
     unless @user_name.nil?
       unless @vote_left.to_i < 1
         _vote
-        @mess = '投票しました'
+        #@mess = '投票しました'
+        cookies[:mess] = { :value => @player.number.to_s + 'に★しました' }
       else
-        @mess = '投票回数が0回です'
+        #@mess = '投票回数が0回です'
+        cookies[:mess] = { :value => '投票回数が０回です' }
       end
     else
-      @mess = 'まずユーザ登録してください'
+      #@mess = 'まずユーザ登録してください'
+      cookies[:mess] = { :value => 'まずはユーザ名を決めて参加してください' }
     end
-    #respond_to do |format|
-    #  format.html { redirect_to players_url }
-    #  format.json { head :no_content }
-    #end
-    # messをcookie使ってやり取りするならこの処理はいらん
-    @players = Player.find(:all, :order => "points DESC")
-    @vote_left = cookies[:vote_left]
-    render 'players/index'
+    respond_to do |format|
+      format.html { redirect_to players_url }
+      format.json { head :no_content }
+    end
+    ## messをcookie使ってやり取りするならこの処理はいらん
+    #@players = Player.find(:all, :order => "points DESC")
+    #@vote_left = cookies[:vote_left]
+    #render 'players/index'
   end
 end
 

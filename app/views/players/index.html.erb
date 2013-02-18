@@ -1,4 +1,3 @@
-<h4><%= link_to('TOP', {:controller => 'top'}) %></h4>
 <h3>
   <% if @vote_left.to_i < 1 %>
     <%= @user_name %>@もう投票できない
@@ -6,44 +5,56 @@
     <%= @user_name %>@あと<%= @vote_left %>回
   <% end %>
 </h3>
-<h1>Players List</h1>
 <h3><%= @mess %></h3>
-<table>
+<table class="table">
   <tr>
-    <th>#</th>
-    <th>Name</th>
-    <th>Pos.</th>
-    <th>Gr.</th>
-    <th>Imgurl</th>
-    <th>Introduction</th>
-    <th></th>
-    <th>POINT</th>
-    <!--th>From</th-->
-    <!--th>Info</th-->
-    <th></th>
-    <th></th>
-    <th></th>
+    <!--th>(dbg)</th-->
+    <th>pict</th>
+    <th>info</th>
+    <th>stars</th>
   </tr>
 
 <% @players.each_with_index do |player, _i| %>
   <tr id="<%= _i %>">
-    <td><%= player.number %></td>
-    <td><%= player.name %><br><%= player.kana %></td>
-    <td><%= POSITIONS[player.position] %></td>
-    <td><%= GRADES[player.grade] %></td>
-    <td><%= image_tag player.imgurl, :class => 'prof-list' %></td>
-    <td><%= player.introduction %></td>
-    <td>
+    <!-- dbg -->
+    <!-- td class="dbg">
+      <%= _i %>
+    </td -->
+    <!-- thumbnail -->
+    <td class="prof">
+      <%= link_to image_tag(player.imgurl, :class => 'prof-img'), player %>
+    </td>
+    <!-- info -->
+    <td class="info">
+      <span class="sharp">#</span><span class="backnumber"><%= player.number %></span>
+      .<%= POSITIONS[player.position] %>
+      .<%= GRADES[player.grade] %><br>
+      <span class="player-name"><%= player.name %></span><br>
+      <small><%= player.kana %></small><br>
+      <!-- <%= link_to 'Show', player %> -->
+    </td>
+    <!-- stars -->
+    <td class="stars">
+      <!-- current -->
+      <% if player.points.nil? %>
+        0
+      <% else %>
+        <% player.p_twenty.to_i.times do %>
+          <%= image_tag 'src/star.gif', :class => 'img-star-twenty' %>
+        <% end %>
+        <% player.p_under_twenty.to_i.times do %>
+          <%= image_tag 'src/star.gif', :class => 'img-star' %>
+        <% end %>
+        <br>
+        <small><%= player.points %></small>
+      <% end %>
+      <!-- vote -->
       <!--a href="players/<%= player.id %>/vote"><button>VOTE</button</a-->
       <%= form_tag({ :action => 'vote' }, { :class => 'hoge' }) do %>
         <%= hidden_field_tag('id', player.id) %>
-        <%= submit_tag 'VOTE' %>
+        <%= submit_tag 'VOTE', { :class => 'btn btn-info btn-mini' } %>
       <% end %>
     </td>
-    <td><% if player.points.nil? %>0<% else %><%= player.points %><% end %></td>
-    <!--td><%= player.from %></td-->
-    <!--td><%= player.info %></td-->
-    <td><%= link_to 'Show', player %></td>
     <!--td><%= link_to 'Edit', edit_player_path(player) %></td-->
     <!--td><%= link_to 'Destroy', player, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td-->
   </tr>
@@ -52,4 +63,4 @@
 
 <br />
 
-<%= link_to 'New Player', new_player_path %>
+<!-- <%= link_to 'New Player', new_player_path %> -->

@@ -1,14 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Gangvote</title>
+  <title>Stars★</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <!--link rel="stylesheet" href="bootstrap/css/bootstrap.css" /-->
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
 </head>
 <body>
-<hr>
+<!-- twitterbootstrap navbar -->
+<div class="navbar navbar-inverse navbar-fixed-top">
+  <div class="navbar-inner">
+    <%= link_to('theMAN', {:controller => 'top'}, {:class => 'brand'}) %>
+    <ul class="nav pull-right">
+      <!-- li class="active"><a href="#">Home</a></li>
+      <li><a href="#">Link</a></li>
+      <li><a href="#">Link</a></li -->
+      <li>
+        <div class="login-info">
+          <p>3月31日 京都大学vs関西学院大学</p>
+          <a href="/players">
+          <% unless @user_name.nil? %>
+            <%= @user_name %>として参加中
+          <% end %>
+          </a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+<!-- /twitterbootstrap navbar -->
+<div class="contents">
+<div id="top-space"></div>
 <%= yield %>
-<hr>
+<div id="top-space"></div>
+</div>
 </body>
 </html>
