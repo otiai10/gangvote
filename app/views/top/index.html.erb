@@ -18,7 +18,7 @@
       <%= text_field_tag 'user_name', '', { :size => 50, :placeholder => 'ユーザ名を登録' } %><br>
       <%= submit_tag '参加', { :class => 'btn'} %><br>
       <small>※ MVP投票集計以外の目的には使用されません</small><br>
-      <small>※ このユーザ名情報は24時間後に破棄されます</small>
+      <small>※ このユーザ名情報は10時間後に無効になります</small>
     <% end %>
   <% else %>
     <h3><%= @user_name %>として参加中</h3>
