@@ -5,7 +5,21 @@ class AccountController < ApplicationController
     redirect_to players_url
   end
 
-  def adminlogin
-    redirect_to adminmenue_url
+  def adminsignin
+    @adminuser = Adminuser.find(:first, :conditions => {:name => params[:name], :team => params[:team], :password => params[:password]})
+    unless @adminuser.nil?
+      cookies[:mess] = 'サインインしました'
+      session[:login_name] = @adminuser.name
+      redirect_to :controller => 'admin', :action => 'game'
+    else
+      cookies[:mess] = 'チーム名、管理者名、パスワードの組み合わせが不正です'
+      redirect_to :controller => 'admin', :action => 'login'
+    end
+  end
+
+  def adminsignout
+    cookies[:mess] = 'サインアウトしました'
+    session[:login_name] = nil
+    redirect_to :controller => 'admin', :action => 'login'
   end
 end

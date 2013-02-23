@@ -19,3 +19,27 @@ body {
   min-width: 600px;
   margin: 0 auto;
 }
+
+.main {
+  margin-top: 80px;
+}
+
+.nav-pills {
+  margin-top: 80px;
+  width: 200px;
+}
+
+li.active>a {
+  text-shadow: 0 0 0 #fff;
+}
+
+img.prof-img {
+  width: 120px;
+}
+
+.cell3>dl>dt {
+  width: 60px;
+}
+.cell3>dl>dd {
+  margin-left: 62px;
+}

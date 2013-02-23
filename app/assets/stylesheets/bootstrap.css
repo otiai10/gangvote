@@ -857,7 +857,7 @@ dd {
 }
 
 dt {
-  font-weight: bold;
+  /* font-weight: bold; myTune */
 }
 
 dd {
@@ -881,7 +881,8 @@ dd {
 
 .dl-horizontal dt {
   float: left;
-  width: 160px;
+  /* width: 160px; myTune */
+  width: 90px;
   overflow: hidden;
   clear: left;
   text-align: right;
@@ -890,7 +891,8 @@ dd {
 }
 
 .dl-horizontal dd {
-  margin-left: 180px;
+  /* margin-left: 180px; myTune */
+  margin-left: 100px;
 }
 
 hr {
@@ -1196,7 +1198,7 @@ input[type="file"] {
 }
 
 select {
-  width: 220px;
+  /* width: 220px; myTune */
   background-color: #ffffff;
   border: 1px solid #cccccc;
 }
