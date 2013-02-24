@@ -10,7 +10,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130212041851) do
+ActiveRecord::Schema.define(:version => 20130219114733) do
+
+  create_table "adminusers", :force => true do |t|
+    t.string   "team",       :null => false
+    t.string   "name",       :null => false
+    t.string   "password",   :null => false
+    t.binary   "info"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "players", :force => true do |t|
     t.integer  "number"

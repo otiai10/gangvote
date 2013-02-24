@@ -1,0 +1,45 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  clear: both;
+}
+
+body {
+  background-color: #f0f0f0;
+  text-shadow: 0 1px 0 #fff;
+}
+
+.navbar-inner {
+  padding-left:  0;
+  padding-right: 0;
+}
+
+.contents {
+  width: 80%;
+  min-width: 600px;
+  margin: 0 auto;
+}
+
+.main {
+  margin-top: 80px;
+}
+
+.nav-pills {
+  margin-top: 80px;
+  width: 200px;
+}
+
+li.active>a {
+  text-shadow: 0 0 0 #fff;
+}
+
+img.prof-img {
+  width: 120px;
+}
+
+.cell3>dl>dt {
+  width: 60px;
+}
+.cell3>dl>dd {
+  margin-left: 62px;
+}
