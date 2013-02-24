@@ -1,39 +1,7 @@
+<html>
 <%= render(:partial => "head") %>
 <body>
-<div class="navbar navbar-fixed-top">
-  <div class="navbar-inner">
-    <div class="contents">
-      <%= link_to('theMAN-Admin', {:controller => 'admin', :action => 'game'}, {:class => 'brand'}) %>
-      <% unless session[:login_name].nil? %>
-      <ul class="nav pull-right">
-        <li id="fat-menu" class="dropdown">
-          <a  href="#" role="button" class="um dropdown-toggle">
-            hoge<b class="caret"></b>
-          </a>
-          <ul class="dropdown-menu hide" role="menu" arial-labeledby="drop_accou">
-            <li>
-              <a tabindex="-1" href="http://soundhook.net/listory">listory</a>
-            </li>
-            <li>
-              <a tabindex="-1" href="http://soundhook.net/settings">settings</a>
-            </li>
-            <li>
-              <a tabindex="-1" href="http://soundhook.net/">home</a>
-            </li>
-            <li class="divider"></li>
-            <li>
-              <a tabindex="-1" href="http://soundhook.net/signout">sign out</a>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <%= link_to('Sign out', {:controller => 'account', :action => 'adminsignout'}) %>
-        </li>
-      </ul>
-      <% end %>
-    </div>
-  </div>
-</div>
+<%= render(:partial => "navbar") %>
 <div class="contents">
   <div class="row-fluid">
     <div class="span3 bs-docs-sidebar">

@@ -1,5 +1,8 @@
 # 定数定義
 
+RAILS_ROOT = '/home/hiromu/rails/projects/gangvote/'
+
+
 POSITIONS = {
   0 => '未使用',
   1 => 'OL',
@@ -8,7 +11,6 @@ POSITIONS = {
   4 => 'RB'
 }
 POSITIONS_FORM = {
-  '未使用' => 0,
   'OL'     => 1,
   'TE'     => 2,
   'QB'     => 3,
@@ -24,7 +26,6 @@ GRADES = {
 }
 
 GRADES_FORM = {
-  '未使用' => 0,
   '1年'    => 1,
   '2年'    => 2,
   '3年'    => 3,
@@ -47,7 +48,6 @@ REGION = {
 }
 
 REGION_FORM = {
-  '未使用' => 0,
   '北海道' => 1,
   '青森'   => 2,
   '岩手'   => 3,
