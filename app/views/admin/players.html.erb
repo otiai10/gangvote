@@ -1,48 +1,21 @@
+<html>
 <%= render(:partial => "head") %>
 <body>
-<div class="navbar navbar-fixed-top">
-  <div class="navbar-inner">
-    <div class="contents">
-      <%= link_to('theMAN-Admin', {:controller => 'admin', :action => 'game'}, {:class => 'brand'}) %>
-      <% unless session[:login_name].nil? %>
-      <ul class="nav pull-right">
-        <li>
-          <%= link_to('Sign out', {:controller => 'account', :action => 'adminsignout'}) %>
-        </li>
-      </ul>
-      <% end %>
-    </div>
-  </div>
-</div>
+<%= render(:partial => "navbar") %>
+
 <div class="contents">
   <div class="row-fluid">
     <div class="span3 bs-docs-sidebar">
-      <ul class="nav nav-pills nav-stacked affix">
-        <li <% if controller.action_name == 'game' %>class="active"<% end %>>
-          <%= link_to('試合登録', {:controller => 'admin', :action => 'game'}) %>
-        </li>
-        <li <% if controller.action_name == 'players' %>class="active"<% end %>>
-          <%= link_to('選手リスト', {:controller => 'admin', :action => 'players'}) %>
-        </li>
-        <li <% if controller.action_name == 'csv' %>class="active"<% end %>>
-          <%= link_to('一括更新', {:controller => 'admin', :action => 'csv'}) %>
-        </li>
-      </ul>
+      <%= render(:partial => "sidebar") %>
     </div>
     <div class="span9 main">
       <h5>登録選手リスト</h5>
-      <table class="table">
+      <div>
+        <%= link_to 'すべての得票をリセットする', {:controller => 'players', :action => 'init'}, :class => 'btn btn-small btn-warning' %>
+        <%= link_to '新しい選手の追加', {:controller => 'admin', :action => 'newplayer'}, :class => 'btn btn-small' %>
+      </div>
+      <table class="table table-hover">
         <tr>
-          <td colspan="3">
-            <a href="#" class="btn btn-warning" style="float:right">すべての得票をリセットする↓</a>
-          </td>
-        </tr>
-        <tr>
-          <!--th class="cell0">デバグ</th-->
-          <th class="cell1"><!--必須-->情報</th>
-          <!--th class="cell2">任意情報</th-->
-          <th class="cell3">画像</th>
-          <th class="cell4">得票</th>
         </tr>
       <% @players.each_with_index do |player, _i| %>
         <tr id="<%= _i %>">
@@ -50,11 +23,12 @@
             <%= _i %>
           </td-->
           <!-- info -->
-          <%= form_for(player) do |f| %>
+          <%= form_for(player, :html => {:multipart => true}) do |f| %>
           <td class="info cell1">
             <dl class="dl-horizontal">
               <dt>氏名</dt><dd><%= f.text_field :name %></dd>
               <dt>かな</dt><dd><%= f.text_field :kana %></dd>
+              <dt>所属チーム</dt><dd><%= f.text_field :team %></dd>
               <dt>背番号</dt><dd><%= f.select :number, (1..99).to_a %></dd>
               <dt>ポジション</dt><dd><%= f.select :position, POSITIONS_FORM %></dd>
               <dt>学年</dt><dd><%= f.select :grade, GRADES_FORM %></dd>
@@ -65,9 +39,17 @@
           <!-- thumbnail -->
           <td class="prof cell3">
             <dl class="dl-horizontal">
-              <dt>画像</dt><dd><%= image_tag(player.imgurl, :class => 'prof-img') %></dt>
+              <dt>画像</dt>
+              <dd><%= image_tag(player.imgurl, :class => 'prof-img') %><br>
+                <span class="xsml">↓新しい画像を設定する場合</span><br>
+                <input type="file" name="file" accept="image/jpg">
+              </dd>
               <dt>紹介文</dt><dd><%= f.text_area :introduction, :cols => 30, :rows => 3 %></dd>
-              <%= f.submit('情報を更新する', :class => 'btn') %>
+              <dt></dt>
+              <dd>
+                <%= f.submit('情報を更新する', :class => 'btn btn-info btn-small') %>
+                <%= link_to '削除', {:controller => 'players', :action => 'delete', :id => player.id }, :data => { :confirm => 'この選手を削除しますか?' }, :class => 'btn btn-small btn-danger delete-player' %>
+              </dd>
             </dl>
           </td>
           <% end %>

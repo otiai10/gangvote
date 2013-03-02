@@ -1,4 +1,12 @@
 class PlayersController < ApplicationController
+
+  def init
+    if Player.update_all("points=0")
+      cookies[:mess] = '得票を初期化しました'
+    end
+    redirect_to :controller => 'admin', :action => 'players'
+  end
+
   # GET /players
   # GET /players.json
   def index
@@ -56,7 +64,8 @@ class PlayersController < ApplicationController
 
     respond_to do |format|
       if @player.save
-        format.html { redirect_to @player, :notice => 'Player was successfully created.' }
+        #format.html { redirect_to @player, :notice => 'Player was successfully created.' }
+        format.html { redirect_to :controller => 'admin', :action => 'players' }
         format.json { render :json => @player, :status => :created, :location => @player }
       else
         format.html { render :action => "new" }
@@ -70,9 +79,24 @@ class PlayersController < ApplicationController
   def update
     @player = Player.find(params[:id])
 
+    # create new file path
+    f_name = params[:player][:team] + '_' + params[:player][:number]
+    # pick up param
+    file = params[:file]
+    unless file.nil?
+      # save file binary
+      File.open(RAILS_ROOT + '/app/assets/images/prof/' + f_name, 'w') do |opened|
+        opened.write(file.read)
+      end
+    end
+
+    # set imgurl
+    #@player[:imgrul] = 'prof/' + f_name # この書き方だと、update_attributesで上書きされるくさい
+    params[:player][:imgurl] = 'prof/' + f_name
+
     respond_to do |format|
       if @player.update_attributes(params[:player])
-        format.html { redirect_to @player, :notice => 'Player was successfully updated.' }
+        format.html { redirect_to :controller => 'admin', :action => 'players' }
         format.json { head :no_content }
       else
         format.html { render :action => "edit" }
@@ -81,14 +105,13 @@ class PlayersController < ApplicationController
     end
   end
 
-  # DELETE /players/1
-  # DELETE /players/1.json
-  def destroy
+  # DELETE /players/delete/1
+  def delete
     @player = Player.find(params[:id])
-    @player.destroy
+    res = @player.delete
 
     respond_to do |format|
-      format.html { redirect_to players_url }
+      format.html { redirect_to :controller => 'admin', :action => 'players' }
       format.json { head :no_content }
     end
   end
