@@ -8,7 +8,11 @@
 </div>
 <div class="row">
   <div class="span9 game-title">
-    <p>3月31日:京都大学vs関西学院大学</p>
+    <p>
+      <h4><%= @game.date %></h4>
+      <h3><%= @game.title %></h3>
+      <h4>@<%= STADIUMS[@game.stadium] %></h4>
+    </p>
   </div>
 </div>
 <div class="row">

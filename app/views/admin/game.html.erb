@@ -5,20 +5,43 @@
 <div class="contents">
   <div class="row-fluid">
     <div class="span3 bs-docs-sidebar">
-      <ul class="nav nav-pills nav-stacked affix">
-        <li <% if controller.action_name == 'game' %>class="active"<% end %>>
-          <%= link_to('試合登録', {:controller => 'admin', :action => 'game'}) %>
-        </li>
-        <li <% if controller.action_name == 'list' %>class="active"<% end %>>
-          <%= link_to('選手リスト', {:controller => 'admin', :action => 'players'}) %>
-        </li>
-        <li <% if controller.action_name == 'list' %>class="active"<% end %>>
-          <%= link_to('一括更新', {:controller => 'admin', :action => 'players'}) %>
-        </li>
-      </ul>
+      <%= render(:partial => "sidebar") %>
     </div>
     <div class="span9 main">
-      <h5>直近の試合を登録</h5>
+      <h5>直近の試合を更新</h5>
+      <div>
+        <%= form_for(@newgame, :html => {:multipart => true}) do |f| %>
+        <dl class="dl-horizontal newgame">
+          <!--dt class="newgame">日付</dt><dd><%= f.datetime_select :date %></dd-->
+          <dt>日付</dt><dd><input type="date" name="game[date]" required></dd>
+          <dt>タイトル</dt>
+          <dd><%= f.text_field :title, :placeholder => '例) 2013初戦 同志社大学 vs 京都大学', :required => true %>
+            <br><small>※ 日時、場所は<b>入れない</b>で下さい. 重複して表示されることになります.</small>
+          </dd>
+          <dt>場所</dt><dd><%= f.select :stadium, STADIUMS_FORM %></dd>
+          <dt>ホームチーム</dt><dd><%= f.select :hometeam, TEAMS_FORM %><small>※ 管理用です. 表示されません</small></dd>
+          <dt>アウェイチーム</dt><dd><%= f.select :awayteam, TEAMS_FORM %><small>※ 管理用です. 表示されません</small></dd>
+          <dt>画像</dt><dd><input type="file" name="file" accept="image/jpg"></dd>
+          <dt>　</dt><dd><%= f.submit('新しく追加する', :class => 'btn btn-info btn-small') %></dd>
+        </dl>
+        <% end %>
+      </div>
+      <hr>
+      <h5>現在有効化されている試合</h5>
+      <div>
+        <% unless @game.nil? %>
+        <dl class="dl-horizontal newgame">
+          <dt>日付</dt><dd><%= @game.date %>hoge</dd>
+          <dt>タイトル</dt><dd><%= @game.title %></dd>
+          <dt>場所</dt><dd><%= STADIUMS[@game.stadium] %></dd>
+          <dt>管理用</dt><dd><%= @game.hometeam %> vs <%= @game.awayteam %></dd>
+          <dt>画像</dt><dd><%= image_tag(@game.imgurl, :class => '') %><br>
+        </dl>
+        <% else %>
+          現在登録されている試合はありません
+        <% end %>
+      </div>
+
     </div>
   </div>
 </div>
