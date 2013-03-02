@@ -60,3 +60,8 @@ REGION_FORM = {
   '群馬'   => 10,
   '埼玉'   => 11
 }
+
+TEAMS_FORM = {
+  'gangsters' => 'gangsters',
+  'wildrover' => 'wildrover'
+}
