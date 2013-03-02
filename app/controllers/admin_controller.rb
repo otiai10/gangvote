@@ -10,6 +10,8 @@ class AdminController < ApplicationController
 
   def game
     if authenticate()
+      @newgame = Game.new
+      @game = Game.last
       respond_to do |format|
         format.html { render :layout => false }
       end

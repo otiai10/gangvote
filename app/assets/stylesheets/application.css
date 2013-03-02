@@ -23,7 +23,7 @@ html, body {
 
 body {
   /* background-image: url('http://pds.exblog.jp/pds/1/200911/09/31/a0095531_22452614.jpg'); */
-  background-image: url('/assets/src/background.jpg');
+  /* background-image: url('/assets/src/background.jpg'); */
   background-size: cover;
   background-attachment: fixed;
 }

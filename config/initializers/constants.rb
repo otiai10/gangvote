@@ -65,3 +65,16 @@ TEAMS_FORM = {
   'gangsters' => 'gangsters',
   'wildrover' => 'wildrover'
 }
+
+STADIUMS = {
+  0 => '未使用',
+  1 => '京都大学農学部グラウンド',
+  2 => '同志社大学田辺キャンパス'
+}
+
+STADIUMS_FORM = {
+  '京都大学農学部グラウンド' => 1,
+  '同志社大学田辺キャンパス' => 2
+}
+
+IMG_EXTENTION = '.jpg'

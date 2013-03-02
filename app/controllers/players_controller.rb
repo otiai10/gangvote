@@ -1,5 +1,6 @@
 class PlayersController < ApplicationController
 
+
   def init
     if Player.update_all("points=0")
       cookies[:mess] = '得票を初期化しました'
@@ -10,6 +11,8 @@ class PlayersController < ApplicationController
   # GET /players
   # GET /players.json
   def index
+    @game = Game.last
+
     @mess      = cookies[:mess]
     @user_name = cookies[:user_name]
     @vote_left = cookies[:vote_left]
@@ -30,6 +33,8 @@ class PlayersController < ApplicationController
   # GET /players/1
   # GET /players/1.json
   def show
+    @game = Game.last
+
     @player = Player.find(params[:id])
     @user_name = cookies[:user_name]
     @vote_left = cookies[:vote_left]
@@ -64,7 +69,7 @@ class PlayersController < ApplicationController
       @player = Player.new(params[:player])
 
       # create new file path
-      f_name = params[:player][:team] + '_' + params[:player][:number]
+      f_name = params[:player][:team] + '_' + params[:player][:number] + IMG_EXTENTION
       # pick up param
       file = params[:file]
       unless file.nil?
@@ -75,9 +80,7 @@ class PlayersController < ApplicationController
       end
 
       # set imgurl
-      #@player[:imgrul] = 'prof/' + f_name # この書き方だと、update_attributesで上書きされるくさい
-      params[:player][:imgurl] = 'prof/' + f_name
-
+      @player[:imgurl] = 'prof/' + f_name
 
       respond_to do |format|
         if @player.save
