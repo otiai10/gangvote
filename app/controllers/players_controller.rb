@@ -60,16 +60,34 @@ class PlayersController < ApplicationController
   # POST /players
   # POST /players.json
   def create
-    @player = Player.new(params[:player])
+    if authenticate()
+      @player = Player.new(params[:player])
 
-    respond_to do |format|
-      if @player.save
-        #format.html { redirect_to @player, :notice => 'Player was successfully created.' }
-        format.html { redirect_to :controller => 'admin', :action => 'players' }
-        format.json { render :json => @player, :status => :created, :location => @player }
-      else
-        format.html { render :action => "new" }
-        format.json { render :json => @player.errors, :status => :unprocessable_entity }
+      # create new file path
+      f_name = params[:player][:team] + '_' + params[:player][:number]
+      # pick up param
+      file = params[:file]
+      unless file.nil?
+        # save file binary
+        File.open(RAILS_ROOT + '/app/assets/images/prof/' + f_name, 'w') do |opened|
+          opened.write(file.read)
+        end
+      end
+
+      # set imgurl
+      #@player[:imgrul] = 'prof/' + f_name # この書き方だと、update_attributesで上書きされるくさい
+      params[:player][:imgurl] = 'prof/' + f_name
+
+
+      respond_to do |format|
+        if @player.save
+          #format.html { redirect_to @player, :notice => 'Player was successfully created.' }
+          format.html { redirect_to :controller => 'admin', :action => 'players' }
+          format.json { render :json => @player, :status => :created, :location => @player }
+        else
+          format.html { render :action => "new" }
+          format.json { render :json => @player.errors, :status => :unprocessable_entity }
+        end
       end
     end
   end
@@ -77,42 +95,46 @@ class PlayersController < ApplicationController
   # PUT /players/1
   # PUT /players/1.json
   def update
-    @player = Player.find(params[:id])
+    if authenticate()
+      @player = Player.find(params[:id])
 
-    # create new file path
-    f_name = params[:player][:team] + '_' + params[:player][:number]
-    # pick up param
-    file = params[:file]
-    unless file.nil?
-      # save file binary
-      File.open(RAILS_ROOT + '/app/assets/images/prof/' + f_name, 'w') do |opened|
-        opened.write(file.read)
+      # create new file path
+      f_name = params[:player][:team] + '_' + params[:player][:number]
+      # pick up param
+      file = params[:file]
+      unless file.nil?
+        # save file binary
+        File.open(RAILS_ROOT + '/app/assets/images/prof/' + f_name, 'w') do |opened|
+          opened.write(file.read)
+        end
       end
-    end
 
-    # set imgurl
-    #@player[:imgrul] = 'prof/' + f_name # この書き方だと、update_attributesで上書きされるくさい
-    params[:player][:imgurl] = 'prof/' + f_name
+      # set imgurl
+      #@player[:imgrul] = 'prof/' + f_name # この書き方だと、update_attributesで上書きされるくさい
+      params[:player][:imgurl] = 'prof/' + f_name
 
-    respond_to do |format|
-      if @player.update_attributes(params[:player])
-        format.html { redirect_to :controller => 'admin', :action => 'players' }
-        format.json { head :no_content }
-      else
-        format.html { render :action => "edit" }
-        format.json { render :json => @player.errors, :status => :unprocessable_entity }
+      respond_to do |format|
+        if @player.update_attributes(params[:player])
+          format.html { redirect_to :controller => 'admin', :action => 'players' }
+          format.json { head :no_content }
+        else
+          format.html { render :action => "edit" }
+          format.json { render :json => @player.errors, :status => :unprocessable_entity }
+        end
       end
     end
   end
 
   # DELETE /players/delete/1
   def delete
-    @player = Player.find(params[:id])
-    res = @player.delete
+    if authenticate()
+      @player = Player.find(params[:id])
+      res = @player.delete
 
-    respond_to do |format|
-      format.html { redirect_to :controller => 'admin', :action => 'players' }
-      format.json { head :no_content }
+      respond_to do |format|
+        format.html { redirect_to :controller => 'admin', :action => 'players' }
+        format.json { head :no_content }
+      end
     end
   end
 
@@ -158,4 +180,13 @@ def _vote()
   new_vote_left = @vote_left.to_i - 1
   cookies[:vote_left] = { :value => new_vote_left }
   logger.debug new_vote_left
+end
+
+def authenticate()
+  if session[:login_name].nil?
+    redirect_to :controller => 'admin', :action => 'login'
+    return false
+  else
+    return true
+  end
 end
