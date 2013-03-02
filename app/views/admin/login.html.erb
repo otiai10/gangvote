@@ -1,24 +1,8 @@
+<html>
 <%= render(:partial => "head") %>
 <body>
-<div class="navbar">
-  <div class="navbar-inner">
-    <div class="contents">
-      <%= link_to('theMAN-Admin', {:controller => 'adminmenue'}, {:class => 'brand'}) %>
-      <% unless session[:login_name].nil? %>
-      <ul class="nav pull-right">
-        <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#"><%= session[:login_name] %></a>
-          <ul class="dropdown-menu">
-            <li>
-            <%= link_to('Sign out', {:controller => 'account', :action => 'adminsignout'}) %>
-            </li>
-          </ul>
-        </li>
-      </ul>
-      <% end %>
-    </div>
-  </div>
-</div>
+<%= render(:partial => "navbar") %>
+
 <div class="contents">
   <h1 class="lead xlg">Login as an administrator</h1>
   <h2 class="lead"><%= @mess %><h2>

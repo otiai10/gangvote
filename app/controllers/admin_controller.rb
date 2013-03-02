@@ -25,12 +25,30 @@ class AdminController < ApplicationController
     end
   end
 
+  def newplayer
+    if authenticate()
+      @player = Player.new
+      respond_to do |format|
+        format.html { render :layout => false }
+      end
+    end
+  end
+
+  def csv
+    if authenticate()
+       respond_to do |format|
+        format.html { render :layout => false }
+      end
+    end
+  end
+
   def authenticate()
     if session[:login_name].nil?
-      redirect_to :controller => 'adminmenue', :action => 'index'
+      redirect_to :controller => 'admin', :action => 'login'
       return false
     else
       return true
     end
   end
+
 end

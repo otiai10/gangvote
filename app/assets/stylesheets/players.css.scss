@@ -12,6 +12,9 @@ div.contents {
   table {
     tbody {
       tr {
+        td {
+          padding-top: 8px;
+        }
         td.prof {
           width: 30%;
           img.prof-img {
@@ -26,6 +29,7 @@ div.contents {
           }
           span.backnumber {
             font-size: 3em;
+            line-height: 0.8em;
             @include sharp;
           }
           span.player-name {

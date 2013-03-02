@@ -1,0 +1,14 @@
+<ul class="nav nav-pills nav-stacked affix">
+  <li <% if controller.action_name == 'game' %>class="active"<% end %>>
+    <%= link_to('試合登録', {:controller => 'admin', :action => 'game'}) %>
+  </li>
+  <li <% if controller.action_name == 'players' %>class="active"<% end %>>
+    <%= link_to('選手リスト', {:controller => 'admin', :action => 'players'}) %>
+  </li>
+  <li <% if controller.action_name == 'newplayer' %>class="active"<% end %>>
+    <%= link_to('選手の追加', {:controller => 'admin', :action => 'newplayer'}) %>
+  </li>
+  <li <% if controller.action_name == 'csv' %>class="active"<% end %>>
+    <%= link_to('一括追加/更新', {:controller => 'admin', :action => 'csv'}) %>
+  </li>
+</ul>

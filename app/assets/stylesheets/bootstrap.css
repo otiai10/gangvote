@@ -882,7 +882,7 @@ dd {
 .dl-horizontal dt {
   float: left;
   /* width: 160px; myTune */
-  width: 90px;
+  width: 50px;
   overflow: hidden;
   clear: left;
   text-align: right;
@@ -892,7 +892,7 @@ dd {
 
 .dl-horizontal dd {
   /* margin-left: 180px; myTune */
-  margin-left: 100px;
+  margin-left: 60px;
 }
 
 hr {
@@ -2004,7 +2004,7 @@ table {
 }
 
 .table {
-  width: 100%;
+  /* width: 100%; myTune */
   margin-bottom: 20px;
 }
 
