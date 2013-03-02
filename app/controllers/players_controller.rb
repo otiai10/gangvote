@@ -186,7 +186,7 @@ def _vote()
 end
 
 def authenticate()
-  if session[:login_name].nil?
+  if session[:login_user].nil?
     redirect_to :controller => 'admin', :action => 'login'
     return false
   else

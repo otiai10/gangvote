@@ -26,4 +26,14 @@ class GamesController < ApplicationController
       end
     end
   end
+
+  def authenticate()
+    if session[:login_user].nil?
+      redirect_to :controller => 'admin', :action => 'login'
+      return false
+    else
+      return true
+    end
+  end
+
 end
