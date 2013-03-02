@@ -7,10 +7,13 @@
   <%= csrf_meta_tags %>
   <!--link rel="stylesheet" href="bootstrap/css/bootstrap.css" /-->
   <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+  <link rel="shorcut icon" href="/assets/logos/icon.png" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <link rel="apple-touch-icon" href="/assets/logos/icon.png" />
 </head>
 <body>
 <!-- twitterbootstrap navbar -->
-<div class="navbar navbar-inverse navbar-fixed-top">
+<div class="navbar navbar-inverse <% if(controller_name != 'top') %>navbar-fixed-top<% end %>">
   <div class="navbar-inner">
     <%= link_to('theMAN', {:controller => 'top'}, {:class => 'brand'}) %>
     <ul class="nav pull-right">
@@ -32,9 +35,8 @@
 </div>
 <!-- /twitterbootstrap navbar -->
 <div class="contents">
-<div id="top-space"></div>
+<% if(controller_name != 'top') %><div id="top-space"></div><% end %>
 <%= yield %>
-<div id="top-space"></div>
 </div>
 </body>
 </html>

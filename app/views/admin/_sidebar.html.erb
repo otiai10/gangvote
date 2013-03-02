@@ -9,6 +9,6 @@
     <%= link_to('選手の追加', {:controller => 'admin', :action => 'newplayer'}) %>
   </li>
   <li <% if controller.action_name == 'csv' %>class="active"<% end %>>
-    <%= link_to('一括更新', {:controller => 'admin', :action => 'csv'}) %>
+    <%= link_to('一括追加/更新', {:controller => 'admin', :action => 'csv'}) %>
   </li>
 </ul>

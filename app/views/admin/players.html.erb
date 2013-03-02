@@ -48,7 +48,7 @@
               <dt></dt>
               <dd>
                 <%= f.submit('情報を更新する', :class => 'btn btn-info btn-small') %>
-                <%= link_to '削除', {:controller => 'players', :action => 'delete', :id => player.id }, :data => { :confirm => 'この選手を削除しますか?' }, :class => 'btn btn-small btn-danger' %>
+                <%= link_to '削除', {:controller => 'players', :action => 'delete', :id => player.id }, :data => { :confirm => 'この選手を削除しますか?' }, :class => 'btn btn-small btn-danger delete-player' %>
               </dd>
             </dl>
           </td>

@@ -52,3 +52,8 @@ span.xsml {
 td>dl>dt {
   font-size: 0.5em;
 }
+
+dt.newplayer {
+  width: 80px;
+  margin-right: 20px;
+}

@@ -64,7 +64,8 @@ class PlayersController < ApplicationController
 
     respond_to do |format|
       if @player.save
-        format.html { redirect_to @player, :notice => 'Player was successfully created.' }
+        #format.html { redirect_to @player, :notice => 'Player was successfully created.' }
+        format.html { redirect_to :controller => 'admin', :action => 'players' }
         format.json { render :json => @player, :status => :created, :location => @player }
       else
         format.html { render :action => "new" }
@@ -78,14 +79,17 @@ class PlayersController < ApplicationController
   def update
     @player = Player.find(params[:id])
 
-    # pick up param
-    file = params[:file]
     # create new file path
     f_name = params[:player][:team] + '_' + params[:player][:number]
-    # save file binary
-    File.open(RAILS_ROOT + '/app/assets/images/prof/' + f_name, 'w') do |opened|
-      opened.write(file.read)
+    # pick up param
+    file = params[:file]
+    unless file.nil?
+      # save file binary
+      File.open(RAILS_ROOT + '/app/assets/images/prof/' + f_name, 'w') do |opened|
+        opened.write(file.read)
+      end
     end
+
     # set imgurl
     #@player[:imgrul] = 'prof/' + f_name # この書き方だと、update_attributesで上書きされるくさい
     params[:player][:imgurl] = 'prof/' + f_name

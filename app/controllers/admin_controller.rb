@@ -34,6 +34,14 @@ class AdminController < ApplicationController
     end
   end
 
+  def csv
+    if authenticate()
+       respond_to do |format|
+        format.html { render :layout => false }
+      end
+    end
+  end
+
   def authenticate()
     if session[:login_name].nil?
       redirect_to :controller => 'admin', :action => 'login'
