@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130224022542) do
+ActiveRecord::Schema.define(:version => 20130302070609) do
 
   create_table "adminusers", :force => true do |t|
     t.string   "team",       :null => false
@@ -19,6 +19,17 @@ ActiveRecord::Schema.define(:version => 20130224022542) do
     t.binary   "info"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "games", :force => true do |t|
+    t.string   "hometeam"
+    t.string   "awayteam"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.string   "imgurl"
+    t.string   "title"
+    t.integer  "stadium"
+    t.date     "date"
   end
 
   create_table "players", :force => true do |t|

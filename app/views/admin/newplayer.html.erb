@@ -11,11 +11,11 @@
     <div class="span9 main">
       <h5>新しい選手を登録</h5>
       <div>
-        <%= form_for @player do |f| %>
+        <%= form_for(@player, :html => {:multipart => true}) do |f| %>
         <dl class="dl-horizontal">
           <dt class="newplayer">氏名</dt><dd><%= f.text_field :name %></dd>
           <dt class="newplayer">かな</dt><dd><%= f.text_field :kana %></dd>
-          <dt class="newplayer">所属チーム</dt><dd><%= f.text_field :team %></dd>
+          <dt class="newplayer">所属チーム</dt><dd><%= f.select :team, TEAMS_FORM %></dd>
           <dt class="newplayer">背番号</dt><dd><%= f.select :number, (1..99).to_a %></dd>
           <dt class="newplayer">ポジション</dt><dd><%= f.select :position, POSITIONS_FORM %></dd>
           <dt class="newplayer">学年</dt><dd><%= f.select :grade, GRADES_FORM %></dd>

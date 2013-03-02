@@ -57,3 +57,19 @@ dt.newplayer {
   width: 80px;
   margin-right: 20px;
 }
+
+dl.newgame>dt {
+  width: 180px;
+  margin-bottom: 10px;
+}
+dl.newgame>dd {
+  margin-left: 200px;
+  margin-bottom: 10px;
+}
+
+dl.newgame>dd>input[type="text"] {
+  font-size: 1.2em;
+  height: 30px;
+  size: 30;
+  width: 340px;
+}
