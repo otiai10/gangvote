@@ -2,10 +2,10 @@
   <div class="navbar-inner">
     <div class="contents">
       <%= link_to('theMAN-Admin', {:controller => 'admin', :action => :game}, {:class => 'brand'}) %>
-      <% unless session[:login_name].nil? %>
+      <% unless session[:login_user].nil? %>
       <ul class="nav pull-right">
         <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#"><%= session[:login_name] %></a>
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#"><%= session[:login_user][:team] %>::<%= session[:login_user][:name] %></a>
           <ul class="dropdown-menu">
             <li>
             <%= link_to('Sign out', {:controller => 'account', :action => 'adminsignout'}) %>

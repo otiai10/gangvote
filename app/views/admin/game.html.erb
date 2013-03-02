@@ -15,8 +15,8 @@
           <!--dt class="newgame">日付</dt><dd><%= f.datetime_select :date %></dd-->
           <dt>日付</dt><dd><input type="date" name="game[date]" required></dd>
           <dt>タイトル</dt>
-          <dd><%= f.text_field :title, :placeholder => '例) 2013初戦 同志社大学 vs 京都大学', :required => true %>
-            <br><small>※ 日時、場所は<b>入れない</b>で下さい. 重複して表示されることになります.</small>
+          <dd><%= f.text_field :title, :placeholder => '例) 春初戦 同志社大学 vs 京都大学', :required => true %>
+            <br><small>※ 日時、場所は<b>タイトルに記入しない</b>で下さい. 重複して表示されることになります.</small>
           </dd>
           <dt>場所</dt><dd><%= f.select :stadium, STADIUMS_FORM %></dd>
           <dt>ホームチーム</dt><dd><%= f.select :hometeam, TEAMS_FORM %><small>※ 管理用です. 表示されません</small></dd>
@@ -31,11 +31,12 @@
       <div>
         <% unless @game.nil? %>
         <dl class="dl-horizontal newgame">
-          <dt>日付</dt><dd><%= @game.date %>hoge</dd>
+          <dt>日付</dt><dd><%= @game.date %></dd>
           <dt>タイトル</dt><dd><%= @game.title %></dd>
           <dt>場所</dt><dd><%= STADIUMS[@game.stadium] %></dd>
           <dt>管理用</dt><dd><%= @game.hometeam %> vs <%= @game.awayteam %></dd>
-          <dt>画像</dt><dd><%= image_tag(@game.imgurl, :class => '') %><br>
+          <dt>背景画像</dt><dd><%= image_tag(@game.imgurl, :class => '') %><br>
+          <dt></dt><dd><%= link_to 'トップページで確認する >', :controller => :top %></dd>
         </dl>
         <% else %>
           現在登録されている試合はありません

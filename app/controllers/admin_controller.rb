@@ -1,7 +1,6 @@
 class AdminController < ApplicationController
   def login
     @mess = cookies[:mess]
-    @login_name = session[:login_name]
     cookies[:mess] = ''
     respond_to do |format|
       format.html  { render :layout => false }
@@ -45,7 +44,7 @@ class AdminController < ApplicationController
   end
 
   def authenticate()
-    if session[:login_name].nil?
+    if session[:login_user].nil?
       redirect_to :controller => 'admin', :action => 'login'
       return false
     else
