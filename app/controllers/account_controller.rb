@@ -9,7 +9,7 @@ class AccountController < ApplicationController
     @adminuser = Adminuser.find(:first, :conditions => {:name => params[:name], :team => params[:team], :password => params[:password]})
     unless @adminuser.nil?
       cookies[:mess] = 'サインインしました'
-      session[:login_name] = @adminuser.name
+      session[:login_user] = @adminuser
       redirect_to :controller => 'admin', :action => 'game'
     else
       cookies[:mess] = 'チーム名、管理者名、パスワードの組み合わせが不正です'
@@ -19,7 +19,7 @@ class AccountController < ApplicationController
 
   def adminsignout
     cookies[:mess] = 'サインアウトしました'
-    session[:login_name] = nil
+    session[:login_user] = nil
     redirect_to :controller => 'admin', :action => 'login'
   end
 end

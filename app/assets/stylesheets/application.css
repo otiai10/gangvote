@@ -56,3 +56,15 @@ div.contents {
   max-width: 320px;
   margin: 0 auto;
 }
+
+.sml {
+  font-size: 0.7em;
+}
+.xsml {
+  font-size: 0.5em;
+}
+
+div.footer>p {
+  text-align: center;
+  color: #afafaf;
+}

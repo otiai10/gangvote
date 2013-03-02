@@ -22,10 +22,10 @@
       <%= text_field_tag 'user_name', '', { :size => 50, :placeholder => 'ユーザ名を登録' } %><br>
       <%= submit_tag '参加', { :class => 'btn'} %><br>
       <small>※ MVP投票集計以外の目的には使用されません</small><br>
-      <small>※ このユーザ名情報は10時間後に無効になります</small>
+      <small>※ このユーザ名は10時間後に破棄され無効になります</small>
     <% end %>
   <% else %>
-    <h3><%= @user_name %>として参加中</h3>
+    <h3><%= @user_name %>::参加中</h3>
     <h4><%= link_to('Players', {:controller => 'players'}) %></h4>
   <% end %> 
 </div>
