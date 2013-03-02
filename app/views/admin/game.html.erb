@@ -5,17 +5,7 @@
 <div class="contents">
   <div class="row-fluid">
     <div class="span3 bs-docs-sidebar">
-      <ul class="nav nav-pills nav-stacked affix">
-        <li <% if controller.action_name == 'game' %>class="active"<% end %>>
-          <%= link_to('試合登録', {:controller => 'admin', :action => 'game'}) %>
-        </li>
-        <li <% if controller.action_name == 'list' %>class="active"<% end %>>
-          <%= link_to('選手リスト', {:controller => 'admin', :action => 'players'}) %>
-        </li>
-        <li <% if controller.action_name == 'list' %>class="active"<% end %>>
-          <%= link_to('一括更新', {:controller => 'admin', :action => 'players'}) %>
-        </li>
-      </ul>
+      <%= render(:partial => "sidebar") %>
     </div>
     <div class="span9 main">
       <h5>直近の試合を登録</h5>

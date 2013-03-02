@@ -18,7 +18,7 @@ class AdminController < ApplicationController
 
   def players
     if authenticate()
-      @players = Player.all
+      @players = Player.find(:all, :order => "number")
       respond_to do |format|
         format.html { render :layout => false }
       end
