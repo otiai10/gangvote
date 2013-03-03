@@ -18,7 +18,7 @@ class PlayersController < ApplicationController
     @vote_left = cookies[:vote_left]
     cookies[:mess] = { :value => '' }
 
-    @players = Player.find(:all, :order => "points DESC")
+    @players = Player.find(:all, :order => "points DESC, number ASC")
     @players.each do |player|
       player[:p_twenty] = player.points.to_i.div(20)
       player[:p_under_twenty] = player.points.to_i.%20
