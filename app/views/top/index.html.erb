@@ -16,7 +16,6 @@
   </div>
 </div>
 <div class="row">
-  <!-- a href="/players"><%= image_tag 'logos/shiraishi.jpg', :class => 'prof-img' %></a -->
   <% if @user_name.nil? %>
     <%= form_tag({ :controller => 'account', :action => 'login' }, { :id => 'ini-form' }) do %>
       <%= text_field_tag 'user_name', '', { :size => 50, :placeholder => 'ユーザ名を登録' } %><br>
