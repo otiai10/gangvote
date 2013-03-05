@@ -20,8 +20,8 @@ class PlayersController < ApplicationController
 
     @players = Player.find(:all, :order => "points DESC, number ASC")
     @players.each do |player|
-      player[:p_twenty] = player.points.to_i.div(20)
-      player[:p_under_twenty] = player.points.to_i.%20
+      player[:point_big] = player.points.to_i.div(STAR_COMPRESS_NUM)
+      player[:point_one] = player.points.to_i.%STAR_COMPRESS_NUM
     end
 
     respond_to do |format|
@@ -38,8 +38,8 @@ class PlayersController < ApplicationController
     @player = Player.find(params[:id])
     @user_name = cookies[:user_name]
     @vote_left = cookies[:vote_left]
-    @player[:p_twenty] = @player.points.to_i.div(20)
-    @player[:p_under_twenty] = @player.points.to_i.%20
+    @player[:point_big] = @player.points.to_i.div(STAR_COMPRESS_NUM)
+    @player[:point_one] = @player.points.to_i.%STAR_COMPRESS_NUM
     respond_to do |format|
       format.html { render :layout => true }
       format.json { render :json => @player }

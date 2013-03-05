@@ -31,11 +31,11 @@
       <% if @player.points.nil? %>
         0
       <% else %>
-        <% @player.p_twenty.to_i.times do %>
-          <%= image_tag 'src/star.gif', :class => 'img-star-twenty' %>
+        <% @player.point_big.to_i.times do %>
+          <%= image_tag 'src/star_big.png', :class => 'img-star-twenty' %>
         <% end %>
-        <% @player.p_under_twenty.to_i.times do %>
-          <%= image_tag 'src/star.gif', :class => 'img-star' %>
+        <% @player.point_one.to_i.times do %>
+          <%= image_tag 'src/star_small.png', :class => 'img-star' %>
         <% end %>
         <small><%= @player.points %></small>
       <% end %>
