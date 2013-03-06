@@ -14,9 +14,9 @@
       .<%= GRADES[@player.grade] %><br>
       <span class="player-name"><%= @player.name %></span><br>
       <small><%= @player.kana %></small><br>
-      <b>出身:</b>
-      <%= REGION[@player.from] %>
-      <!-- <%= link_to 'Show', @player %> -->
+      <b>出身:</b><%= @player.from %><br>
+      <b>学部学科:</b><%= @player.dept %><br>
+      <b>経験スポーツ:</b><%= @player.sport %>
     </td>
   </tr>
   <tr>

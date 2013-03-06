@@ -32,7 +32,9 @@
               <dt>背番号</dt><dd><%= f.select :number, (1..99).to_a %></dd>
               <dt>ポジション</dt><dd><%= f.select :position, POSITIONS_FORM %></dd>
               <dt>学年</dt><dd><%= f.select :grade, GRADES_FORM %></dd>
-              <dt>出身地</dt><dd><%= f.select :from, REGION_FORM %></dd>
+              <dt>出身</dt><dd><%= f.text_field :from %></dd>
+              <dt>学部</dt><dd><%= f.text_field :dept %></dd>
+              <dt>経験スポーツ</dt><dd><%= f.text_field :sport %></dd>
               <!--dt>その他</dt><dd><%= f.text_area :info, :cols => 30, :rows => 2 %></dd-->
             </dl>
           </td>

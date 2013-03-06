@@ -19,7 +19,9 @@
           <dt class="newplayer">背番号</dt><dd><%= f.select :number, (1..99).to_a %></dd>
           <dt class="newplayer">ポジション</dt><dd><%= f.select :position, POSITIONS_FORM %></dd>
           <dt class="newplayer">学年</dt><dd><%= f.select :grade, GRADES_FORM %></dd>
-          <dt class="newplayer">出身地</dt><dd><%= f.select :from, REGION_FORM %></dd>
+          <dt class="newplayer">出身</dt><dd><%= f.text_field :from %></dd>
+          <dt class="newplayer">学部</dt><dd><%= f.text_field :dept %></dd>
+          <dt class="newplayer">経験スポーツ</dt><dd><%= f.text_field :sport %></dd>
           <dt class="newplayer">画像</dt><dd><input type="file" name="file" accept="image/jpg"></dd>
           <dt class="newplayer">紹介文</dt><dd><%= f.text_area :introduction, :cols => 30, :rows => 3 %></dd>
           <dt class="newplayer">　</dt><dd><%= f.submit('新しく追加する', :class => 'btn btn-info btn-small') %></dd>
