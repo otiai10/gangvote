@@ -43,7 +43,7 @@
     <td class="vote">
       <!-- vote -->
       <!--a href="players/<%= @player.id %>/vote"><button>VOTE</button</a-->
-      <%= form_tag({ :action => 'vote' }, { :class => 'hoge' }) do %>
+      <%= form_tag({ :action => 'いいね！' }, { :class => 'hoge' }) do %>
         <%= hidden_field_tag('id', @player.id) %>
         <%= submit_tag 'VOTE', { :class => 'btn btn-info btn-mini' } %>
       <% end %>
