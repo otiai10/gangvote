@@ -18,6 +18,8 @@ class PlayersController < ApplicationController
     @vote_left = cookies[:vote_left]
     cookies[:mess] = { :value => '' }
 
+    @game = session[:game]
+
     @players = Player.find(:all, :order => "points DESC, number ASC")
     @players.each do |player|
       player[:point_big] = player.points.to_i.div(STAR_COMPRESS_NUM)
