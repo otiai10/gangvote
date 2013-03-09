@@ -30,7 +30,7 @@
         <div class="login-info">
           <p></p>
           <% unless @user_name.nil? %>
-            <%= link_to(raw('<span class="xsml">' + @user_name + 'あと' + @vote_left + '回</span>'), {:controller => 'players'}, {:class => 'brand'}) %>
+            <%= link_to(raw('<span class="xsml">' + @user_name + 'あと' + @vote_left.to_s + '回</span>'), {:controller => 'players'}, {:class => 'brand'}) %>
           <% end %>
           </a>
         </div>
