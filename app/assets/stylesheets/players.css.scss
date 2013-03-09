@@ -33,16 +33,19 @@ div.contents {
         }
         td.info {
           width: 40%;
-          span.sharp {
-            @include sharp;
-          }
-          span.backnumber {
-            font-size: 3em;
-            line-height: 0.8em;
-            @include sharp;
-          }
-          span.player-name {
-            font-size: 1.4em;
+          a {
+            color: #666;
+            span.sharp {
+              @include sharp;
+            }
+            span.backnumber {
+              font-size: 3em;
+              line-height: 0.8em;
+              @include sharp;
+            }
+            span.player-name {
+              font-size: 1.4em;
+            }
           }
         }
         td.stars {
@@ -79,18 +82,6 @@ div.contents {
       td.vote {
         text-align: right;
         width:35%;
-      }
-    }
-  }
-  div.to_away_list {
-    background-color: red;
-    text-align: center;
-    a {
-      img.logo_to {
-        width: 6em;
-        position: fixed;
-        top: 48px;
-        padding-left: 5em;
       }
     }
   }
