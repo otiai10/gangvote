@@ -79,10 +79,23 @@ div.navbar-footer>div.navbar-inner {
   width: 100%;
 }
 
-.navbar-footer>div>ul>li {
+.navbar-footer>div>ul>li, .navbar-footer>div>ul>li.active {
+  box-sizing: border-box;
   text-align: center;
-  width: 50%;
+  border-bottom: thin solid #666;
+  border-right: thin solid #666;
+  border-radius: 0 0 7px 7px;
 }
+.navbar-footer>div>ul>li.left {
+  width: 40%;
+}
+.navbar-footer>div>ul>li.center {
+  width: 20%;
+}
+.navbar-footer>div>ul>li.right {
+  width: 40%;
+}
+
 .navbar-footer>div>ul>li>a.brand {
   padding-left: 0;
   padding-right: 0;

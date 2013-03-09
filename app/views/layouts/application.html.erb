@@ -19,9 +19,9 @@
 <body style="background-image:url('/assets/game/<%= @game[:hometeam] %>_<%= @game[:awayteam] %><%= IMG_EXTENTION %>');">
 <% end %>
 <!-- twitterbootstrap navbar -->
-<div class="navbar navbar-inverse <% if(controller_name != 'top') %>navbar-fixed-top<% end %>">
+<div class="navbar navbar-inverse">
   <div class="navbar-inner">
-    <%= link_to(raw('MAN<span class="sml"> of the GAME</small>'), {:controller => 'top'}, {:class => 'brand'}) %>
+    <%= link_to(raw('Like Who?'), {:controller => 'top'}, {:class => 'brand'}) %>
     <ul class="nav pull-right">
       <!-- li class="active"><a href="#">Home</a></li>
       <li><a href="#">Link</a></li>
@@ -41,7 +41,7 @@
 
 <!-- /twitterbootstrap navbar -->
 <div class="contents">
-<% if(controller_name != 'top') %><div id="top-space"></div><% end %>
+<% if(controller_name != 'top') %><!-- div id="top-space"></div --><% end %>
 <%= yield %>
 <% if(controller_name == 'top') %>
 <hr>
@@ -57,10 +57,13 @@
   <div class="navbar navbar-footer <% if(controller_name != 'top') %>navbar-fixed-bottom<% end %>">
     <div class="navbar-inner">
       <ul class="nav">
-        <li class="<% if(controller.action_name != 'away') %>active<% end %>">
-          <%= link_to(@game[:home], {:controller => 'players'}, {:class => 'brand'}) %>
+        <li class="<% if(controller.action_name == 'home') %>active<% end %> left">
+          <%= link_to(@game[:home], {:controller => 'players', :action => 'home' }, {:class => 'brand'}) %>
         </li>
-        <li class="<% if(controller.action_name == 'away') %>active<% end %>">
+        <li class="<% if(controller.action_name == 'index') %>active<% end %> center">
+          <%= link_to( 'vs', {:controller => 'players'}, {:class => 'brand'}) %>
+        </li>
+        <li class="<% if(controller.action_name == 'away') %>active<% end %> right">
           <%= link_to(@game[:away], {:controller => 'players', :action => 'away' }, {:class => 'brand'}) %>
         </li>
       </ul>

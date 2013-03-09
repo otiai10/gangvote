@@ -22,6 +22,32 @@ class PlayersController < ApplicationController
 
       @game = session[:game]
 
+      @players = Player.find(:all, :order => "points DESC, number ASC")
+      @players.each do |player|
+        player[:point_big] = player.points.to_i.div(STAR_COMPRESS_NUM)
+        player[:point_one] = player.points.to_i.%STAR_COMPRESS_NUM
+      end
+
+      respond_to do |format|
+        format.html # index.html.erb
+        format.json { render :json => @players }
+      end
+    end
+  end
+
+  # ほぼindexと同じ
+  def home
+    if isJoined
+      @mess      = cookies[:mess]
+      @user_name = cookies[:user_name]
+      @vote_left = cookies[:vote_left]
+      if @vote_left.nil?
+        @vote_left = 0
+      end
+      cookies[:mess] = { :value => '' }
+
+      @game = session[:game]
+
       @players = Player.find(:all,:conditions => { :team => @game[:home] }, :order => "points DESC, number ASC")
       @players.each do |player|
         player[:point_big] = player.points.to_i.div(STAR_COMPRESS_NUM)
