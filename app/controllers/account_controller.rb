@@ -2,6 +2,9 @@ class AccountController < ApplicationController
   def login
     cookies[:user_name] = { :value => params[:user_name], :expires => COOKIE_EXPIRE_HOUR.hour.from_now }
     cookies[:vote_left] = { :value => MAX_VOTE_TIME, :expires => COOKIE_EXPIRE_HOUR.hour.from_now }
+    hometeam = params[:game].split('-')[0]
+    awayteam = params[:game].split('-')[1]
+    session[:game] = { :home => hometeam, :away => awayteam }
     redirect_to players_url
   end
 

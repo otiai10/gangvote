@@ -1,6 +1,7 @@
 Gangvote::Application.routes.draw do
 
   match 'players/init'     => 'players#init'
+  match 'players/away'     => 'players#away'
   match 'players/:id/vote' => 'players#vote'
 
   resources :players

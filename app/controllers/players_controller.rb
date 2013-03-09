@@ -11,38 +11,71 @@ class PlayersController < ApplicationController
   # GET /players
   # GET /players.json
   def index
-    @game = Game.last
+    if isJoined
+      @mess      = cookies[:mess]
+      @user_name = cookies[:user_name]
+      @vote_left = cookies[:vote_left]
+      if @vote_left.nil?
+        @vote_left = 0
+      end
+      cookies[:mess] = { :value => '' }
 
-    @mess      = cookies[:mess]
-    @user_name = cookies[:user_name]
-    @vote_left = cookies[:vote_left]
-    cookies[:mess] = { :value => '' }
+      @game = session[:game]
 
-    @players = Player.find(:all, :order => "points DESC, number ASC")
-    @players.each do |player|
-      player[:point_big] = player.points.to_i.div(STAR_COMPRESS_NUM)
-      player[:point_one] = player.points.to_i.%STAR_COMPRESS_NUM
+      @players = Player.find(:all,:conditions => { :team => @game[:home] }, :order => "points DESC, number ASC")
+      @players.each do |player|
+        player[:point_big] = player.points.to_i.div(STAR_COMPRESS_NUM)
+        player[:point_one] = player.points.to_i.%STAR_COMPRESS_NUM
+      end
+
+      respond_to do |format|
+        format.html # index.html.erb
+        format.json { render :json => @players }
+      end
     end
+  end
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render :json => @players }
+  # ほぼindexと同じ
+  def away
+    if isJoined
+      @mess      = cookies[:mess]
+      @user_name = cookies[:user_name]
+      @vote_left = cookies[:vote_left]
+      if @vote_left.nil?
+        @vote_left = 0
+      end
+      cookies[:mess] = { :value => '' }
+
+      @game = session[:game]
+
+      @players = Player.find(:all,:conditions => { :team => @game[:away] }, :order => "points DESC, number ASC")
+      @players.each do |player|
+        player[:point_big] = player.points.to_i.div(STAR_COMPRESS_NUM)
+        player[:point_one] = player.points.to_i.%STAR_COMPRESS_NUM
+      end
+
+      respond_to do |format|
+        format.html # index.html.erb
+        format.json { render :json => @players }
+      end
     end
   end
 
   # GET /players/1
   # GET /players/1.json
   def show
-    @game = Game.last
+    if isJoined
+      @game = Game.last
 
-    @player = Player.find(params[:id])
-    @user_name = cookies[:user_name]
-    @vote_left = cookies[:vote_left]
-    @player[:point_big] = @player.points.to_i.div(STAR_COMPRESS_NUM)
-    @player[:point_one] = @player.points.to_i.%STAR_COMPRESS_NUM
-    respond_to do |format|
-      format.html { render :layout => true }
-      format.json { render :json => @player }
+      @player = Player.find(params[:id])
+      @user_name = cookies[:user_name]
+      @vote_left = cookies[:vote_left]
+      @player[:point_big] = @player.points.to_i.div(STAR_COMPRESS_NUM)
+      @player[:point_one] = @player.points.to_i.%STAR_COMPRESS_NUM
+      respond_to do |format|
+        format.html { render :layout => true }
+        format.json { render :json => @player }
+      end
     end
   end
 
@@ -185,11 +218,11 @@ def _vote()
   logger.debug new_vote_left
 end
 
-def authenticate()
-  if session[:login_user].nil?
-    redirect_to :controller => 'admin', :action => 'login'
-    return false
-  else
-    return true
-  end
-end
+#def authenticate()
+#  if session[:login_user].nil?
+#    redirect_to :controller => 'admin', :action => 'login'
+#    return false
+#  else
+#    return true
+#  end
+#end

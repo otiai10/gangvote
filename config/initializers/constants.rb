@@ -164,3 +164,4 @@ STADIUMS_FORM = {
 }
 
 IMG_EXTENTION = '.jpg'
+GIF_EXTENTION = '.gif'
