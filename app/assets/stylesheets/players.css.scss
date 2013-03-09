@@ -12,6 +12,15 @@ div.contents {
   table {
     tbody {
       tr {
+        th {
+          div {
+            a {
+              img.logo_bar {
+                width: 50%;
+              }
+            }
+          }
+        }
         td {
           padding-top: 8px;
         }
@@ -70,6 +79,18 @@ div.contents {
       td.vote {
         text-align: right;
         width:35%;
+      }
+    }
+  }
+  div.to_away_list {
+    background-color: red;
+    text-align: center;
+    a {
+      img.logo_to {
+        width: 6em;
+        position: fixed;
+        top: 48px;
+        padding-left: 5em;
       }
     }
   }

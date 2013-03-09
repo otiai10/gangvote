@@ -64,6 +64,30 @@ div.contents {
   font-size: 0.5em;
 }
 
+.navbar-footer {
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+div.navbar-footer>div.navbar-inner {
+  margin: 0;
+  padding: 0;
+}
+.navbar-footer>div>ul {
+  width: 100%;
+}
+
+.navbar-footer>div>ul>li {
+  text-align: center;
+  width: 50%;
+}
+.navbar-footer>div>ul>li>a.brand {
+  padding-left: 0;
+  padding-right: 0;
+  margin: 0;
+}
+
 div.footer>p {
   text-align: center;
   color: #afafaf;

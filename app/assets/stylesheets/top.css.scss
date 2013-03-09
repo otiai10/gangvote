@@ -7,7 +7,7 @@ div.contents {
   div.row {
     div.span9 {
       p.lead {
-        font-size: 3em;
+        font-size: 2em;
         line-height: 1.4em;
         text-shadow: 0 1px 0px #ddd;
       }
@@ -21,6 +21,12 @@ div.contents {
       text-align: right;
       small {
         font-size: 0.8em;
+      }
+      select  {
+        width:90%;
+        height: 3.5em;
+        font-size: 1em;
+        white-space:normal;
       }
     }
     h3 {
