@@ -151,6 +151,10 @@ TEAMS_FORM = {
   'gangsters' => 'gangsters',
   'wildrover' => 'wildrover'
 }
+FACEBOOK_PAGES = {
+  'gangsters' => 'https://www.facebook.com/pages/%E4%BA%AC%E9%83%BD%E5%A4%A7%E5%AD%A6%E3%82%A2%E3%83%A1%E3%83%AA%E3%82%AB%E3%83%B3%E3%83%95%E3%83%83%E3%83%88%E3%83%9C%E3%83%BC%E3%83%AB%E9%83%A8%E3%82%AE%E3%83%A3%E3%83%B3%E3%82%B0%E3%82%B9%E3%82%BF%E3%83%BC%E3%82%BA/123221844424464',
+  'wildrover' => 'https://www.facebook.com/pages/%E5%90%8C%E5%BF%97%E7%A4%BE%E5%A4%A7%E5%AD%A6%E4%BD%93%E8%82%B2%E4%BC%9A%E3%82%A2%E3%83%A1%E3%83%AA%E3%82%AB%E3%83%B3%E3%83%95%E3%83%83%E3%83%88%E3%83%9C%E3%83%BC%E3%83%AB%E9%83%A8WILDROVER/185994394779508'
+}
 
 STADIUMS = {
   0 => '未使用',
