@@ -930,11 +930,14 @@ blockquote small {
   display: block;
   line-height: 20px;
   color: #999999;
+  font-size: 0.3em;
 }
 
+/**
 blockquote small:before {
   content: '\2014 \00A0';
 }
+**/
 
 blockquote.pull-right {
   float: right;
@@ -949,13 +952,17 @@ blockquote.pull-right small {
   text-align: right;
 }
 
+/**
 blockquote.pull-right small:before {
   content: '';
 }
+**/
 
+/**
 blockquote.pull-right small:after {
   content: '\00A0 \2014';
 }
+**/
 
 q:before,
 q:after,
