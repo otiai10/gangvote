@@ -48,7 +48,7 @@ class PlayersController < ApplicationController
 
       @game = session[:game]
 
-      @players = Player.find(:all,:conditions => { :team => @game[:home] }, :order => "points DESC, number ASC")
+      @players = Player.find(:all,:conditions => { :team => @game[:home] }, :order => "number ASC")
       @players.each do |player|
         player[:point_big] = player.points.to_i.div(STAR_COMPRESS_NUM)
         player[:point_one] = player.points.to_i.%STAR_COMPRESS_NUM
@@ -74,7 +74,7 @@ class PlayersController < ApplicationController
 
       @game = session[:game]
 
-      @players = Player.find(:all,:conditions => { :team => @game[:away] }, :order => "points DESC, number ASC")
+      @players = Player.find(:all,:conditions => { :team => @game[:away] }, :order => "number ASC")
       @players.each do |player|
         player[:point_big] = player.points.to_i.div(STAR_COMPRESS_NUM)
         player[:point_one] = player.points.to_i.%STAR_COMPRESS_NUM
