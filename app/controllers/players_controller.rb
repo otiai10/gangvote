@@ -65,7 +65,8 @@ class PlayersController < ApplicationController
   # GET /players/1.json
   def show
     if isJoined
-      @game = Game.last
+
+      @game = session[:game]
 
       @player = Player.find(params[:id])
       @user_name = cookies[:user_name]

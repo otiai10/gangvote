@@ -1,21 +1,19 @@
 <% @players.each_with_index do |player, _i| %>
   <tr id="<%= _i %>">
-    <!-- dbg -->
-    <!-- td class="dbg">
-      <%= _i %>
-    </td -->
     <!-- thumbnail -->
     <td class="prof">
       <%= link_to image_tag(player.imgurl, :class => 'prof-img'), player %>
     </td>
     <!-- info -->
     <td class="info">
+      <a href="/players/<%= player.id %>">
       <span class="sharp">#</span><span class="backnumber"><%= player.number %></span>
       .<%= POSITIONS[player.position] %>
       .<%= GRADES[player.grade] %><br>
       <span class="player-name"><%= player.name %></span><br>
       <small><%= player.kana %></small><br>
       <!-- <%= link_to 'Show', player %> -->
+      </a>
     </td>
     <!-- stars -->
     <td class="stars">
