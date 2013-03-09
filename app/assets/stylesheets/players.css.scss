@@ -22,7 +22,7 @@ div.contents {
           }
         }
         td {
-          padding-top: 8px;
+          // padding-top: 8px;
         }
         td.prof {
           width: 30%;
@@ -62,15 +62,20 @@ div.contents {
   }
   table.show {
     tr {
+      td {
+        border: none;
+      }
       td.prof {
         width: 65%;
       }
       td.info {
         text-align: right;
         width: 35%;
+        font-size: 1.5em;
         span.backnumber {
-          font-size: 5em;
+          font-size: 4em;
           line-height: 1em;
+          @include sharp;
         }
       }
       td.introduction {
