@@ -4,50 +4,6 @@
     <!--th>(dbg)</th-->
     <th colspan="3"><div class="to_home_list"><%= link_to image_tag( 'logos/' + @game[:home] + '_bar' + GIF_EXTENTION, :class => 'logo logo_bar'), '' %></div></th>
   </tr>
-
-<% @players.each_with_index do |player, _i| %>
-  <tr id="<%= _i %>">
-    <!-- dbg -->
-    <!-- td class="dbg">
-      <%= _i %>
-    </td -->
-    <!-- thumbnail -->
-    <td class="prof">
-      <%= link_to image_tag(player.imgurl, :class => 'prof-img'), player %>
-    </td>
-    <!-- info -->
-    <td class="info">
-      <span class="sharp">#</span><span class="backnumber"><%= player.number %></span>
-      .<%= POSITIONS[player.position] %>
-      .<%= GRADES[player.grade] %><br>
-      <span class="player-name"><%= player.name %></span><br>
-      <small><%= player.kana %></small><br>
-      <!-- <%= link_to 'Show', player %> -->
-    </td>
-    <!-- stars -->
-    <td class="stars">
-      <!-- current -->
-      <% if player.points.nil? %>
-        0
-      <% else %>
-        <% player.point_big.to_i.times do %>
-          <%= image_tag 'src/star_big.png', :class => 'img-star-twenty' %>
-        <% end %>
-        <% player.point_one.to_i.times do %>
-          <%= image_tag 'src/star_small.png', :class => 'img-star' %>
-        <% end %>
-        <br>
-        <small><%= player.points %></small>
-      <% end %>
-      <!-- vote -->
-      <%= form_tag({ :action => 'vote' }, { :class => 'hoge' }) do %>
-        <%= hidden_field_tag('id', player.id) %>
-        <%= submit_tag 'いいね！', { :class => 'btn btn-info btn-mini' } %>
-      <% end %>
-    </td>
-    <!--td><%= link_to 'Edit', edit_player_path(player) %></td-->
-    <!--td><%= link_to 'Destroy', player, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td-->
-  </tr>
-<% end %>
+  <%= render(:partial => "playerrows") %>
 </table>
 
