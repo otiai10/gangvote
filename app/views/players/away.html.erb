@@ -2,7 +2,7 @@
 <table class="table">
   <tr>
     <!--th>(dbg)</th-->
-    <th colspan="3"><div class="to_home_list"><%= link_to image_tag( 'logos/' + @game[:home] + '_bar' + GIF_EXTENTION, :class => 'logo logo_bar'), '' %></div></th>
+    <th colspan="3"><div class="to_home_list"><%= link_to image_tag( 'logos/' + @game[:away] + '_bar' + GIF_EXTENTION, :class => 'logo logo_bar'), '' %></div></th>
   </tr>
 
 <% @players.each_with_index do |player, _i| %>

@@ -11,7 +11,13 @@
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <link rel="apple-touch-icon" href="/assets/logos/icon.png" />
 </head>
+<%# 応急処理的なw %>
+<% if(controller_name != 'top') %>
 <body style="background-image:url('/assets/game/<%= @game[:home] %>_<%= @game[:away] %><%= IMG_EXTENTION %>');">
+<% else %>
+<%# TODO: gameモデルのキーをhome,awayに統一する %>
+<body style="background-image:url('/assets/game/<%= @game[:hometeam] %>_<%= @game[:awayteam] %><%= IMG_EXTENTION %>');">
+<% end %>
 <!-- twitterbootstrap navbar -->
 <div class="navbar navbar-inverse <% if(controller_name != 'top') %>navbar-fixed-top<% end %>">
   <div class="navbar-inner">
@@ -24,7 +30,7 @@
         <div class="login-info">
           <p></p>
           <% unless @user_name.nil? %>
-            <%= link_to(raw('<span class="xsml">' + @user_name + 'として参加中</span>'), {:controller => 'players'}, {:class => 'brand'}) %>
+            <%= link_to(raw('<span class="xsml">' + @user_name + 'あと' + @vote_left + '回</span>'), {:controller => 'players'}, {:class => 'brand'}) %>
           <% end %>
           </a>
         </div>
@@ -32,14 +38,35 @@
     </ul>
   </div>
 </div>
+
 <!-- /twitterbootstrap navbar -->
 <div class="contents">
 <% if(controller_name != 'top') %><div id="top-space"></div><% end %>
 <%= yield %>
+<% if(controller_name == 'top') %>
 <hr>
 <div class="footer">
   <p class="xsml">copyright otiai10. All Right Reserved.</p>
 </div>
+<% end %>
 </div>
+
+<!-- twitterbootstrap navbar -->
+
+<% if(controller_name != 'top') %>
+  <div class="navbar navbar-footer <% if(controller_name != 'top') %>navbar-fixed-bottom<% end %>">
+    <div class="navbar-inner">
+      <ul class="nav">
+        <li class="<% if(controller.action_name != 'away') %>active<% end %>">
+          <%= link_to(@game[:home], {:controller => 'players'}, {:class => 'brand'}) %>
+        </li>
+        <li class="<% if(controller.action_name == 'away') %>active<% end %>">
+          <%= link_to(@game[:away], {:controller => 'players', :action => 'away' }, {:class => 'brand'}) %>
+        </li>
+      </ul>
+    </div>
+  </div>
+<% end %>
+
 </body>
 </html>
