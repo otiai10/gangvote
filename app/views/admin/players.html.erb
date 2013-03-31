@@ -47,7 +47,7 @@
                   <dt>画像</dt>
                   <dd><%= image_tag(player.imgurl, :class => 'prof-img') %><br>
                     <span class="xsml">↓新しい画像を設定する場合</span><br>
-                    <input type="file" name="file" accept="image/jpg">
+                    <input type="file" name="file" accept="image/<%= IMG_EXTENTION %>">
                   </dd>
                   <dt>紹介文</dt><dd><%= f.text_area :introduction, :cols => 30, :rows => 3 %></dd>
                   <dt></dt>

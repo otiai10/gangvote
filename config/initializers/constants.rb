@@ -16,7 +16,9 @@ POSITIONS = {
   6 => 'DL',
   7 => 'LB',
   8 => 'DB',
-  9 => 'K/P'
+  9 => 'K/P',
+  10 => 'LS',
+  11 => 'H'
 }
 POSITIONS_FORM = {
   'OL'  => 1,
@@ -27,7 +29,9 @@ POSITIONS_FORM = {
   'DL'  => 6,
   'LB'  => 7,
   'DB'  => 8,
-  'K/P' => 9
+  'K/P' => 9,
+  'LS' => 10,
+  'H' => 11
 }
 
 GRADES = {
@@ -167,5 +171,4 @@ STADIUMS_FORM = {
   '同志社大学田辺キャンパス' => 2
 }
 
-IMG_EXTENTION = '.jpg'
-GIF_EXTENTION = '.gif'
+IMG_EXTENTION = 'gif'

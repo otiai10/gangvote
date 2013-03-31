@@ -13,10 +13,10 @@
 </head>
 <%# 応急処理的なw %>
 <% if(controller_name != 'top') %>
-<body style="background-image:url('/assets/game/<%= @game[:home] %>_<%= @game[:away] %><%= IMG_EXTENTION %>');">
+<body style="background-image:url('/assets/game/<%= @game[:home] %>_<%= @game[:away] %>.<%= IMG_EXTENTION %>');">
 <% else %>
 <%# TODO: gameモデルのキーをhome,awayに統一する %>
-<body style="background-image:url('/assets/game/<%= @game[:hometeam] %>_<%= @game[:awayteam] %><%= IMG_EXTENTION %>');">
+<body style="background-image:url('/assets/game/<%= @game[:hometeam] %>_<%= @game[:awayteam] %>.<%= IMG_EXTENTION %>');">
 <% end %>
 <!-- twitterbootstrap navbar -->
 <div class="navbar navbar-inverse">
