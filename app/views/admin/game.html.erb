@@ -21,7 +21,7 @@
           <dt>場所</dt><dd><%= f.select :stadium, STADIUMS_FORM %></dd>
           <dt>ホームチーム</dt><dd><%= f.select :hometeam, TEAMS_FORM %><small>※ 管理用です. 表示されません</small></dd>
           <dt>アウェイチーム</dt><dd><%= f.select :awayteam, TEAMS_FORM %><small>※ 管理用です. 表示されません</small></dd>
-          <dt>画像</dt><dd><input type="file" name="file" accept="image/jpg"></dd>
+          <dt>画像</dt><dd><input type="file" name="file" accept="image/<%= IMG_EXTENTION %>"></dd>
           <dt>　</dt><dd><%= f.submit('新しく追加する', :class => 'btn btn-info btn-small') %></dd>
         </dl>
         <% end %>

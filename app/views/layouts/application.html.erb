@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Like Who?</title>
+  <title>ええやん！</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -13,15 +13,15 @@
 </head>
 <%# 応急処理的なw %>
 <% if(controller_name != 'top') %>
-<body style="background-image:url('/assets/game/<%= @game[:home] %>_<%= @game[:away] %><%= IMG_EXTENTION %>');">
+<body style="background-image:url('/assets/game/<%= @game[:home] %>_<%= @game[:away] %>.<%= IMG_EXTENTION %>');">
 <% else %>
 <%# TODO: gameモデルのキーをhome,awayに統一する %>
-<body style="background-image:url('/assets/game/<%= @game[:hometeam] %>_<%= @game[:awayteam] %><%= IMG_EXTENTION %>');">
+<body style="background-image:url('/assets/game/<%= @game[:hometeam] %>_<%= @game[:awayteam] %>.<%= IMG_EXTENTION %>');">
 <% end %>
 <!-- twitterbootstrap navbar -->
 <div class="navbar navbar-inverse">
   <div class="navbar-inner">
-    <%= link_to(raw('Like Who?'), {:controller => 'top'}, {:class => 'brand'}) %>
+    <%= link_to(raw('ええやん！'), {:controller => 'top'}, {:class => 'brand'}) %>
     <ul class="nav pull-right">
       <!-- li class="active"><a href="#">Home</a></li>
       <li><a href="#">Link</a></li>
@@ -30,7 +30,8 @@
         <div class="login-info">
           <p></p>
           <% unless @user_name.nil? %>
-            <%= link_to(raw('<span class="xsml">' + @user_name + 'あと' + @vote_left.to_s + '回</span>'), {:controller => 'players'}, {:class => 'brand'}) %>
+            <%# link_to(raw('<span class="xsml">' + @user_name + 'あと' + @vote_left.to_s + '回</span>'), {:controller => 'players'}, {:class => 'brand'}) %>
+            <%= link_to(raw('<span class="xsml">' + @user_name + 'あと' + @vote_left.to_s + '回</span>'), {:controller => 'lottery'}, {:class => 'brand'}) %>
           <% end %>
           </a>
         </div>
