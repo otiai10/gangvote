@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130306143741) do
+ActiveRecord::Schema.define(:version => 20130324104722) do
 
   create_table "adminusers", :force => true do |t|
     t.string   "team",       :null => false
@@ -48,6 +48,8 @@ ActiveRecord::Schema.define(:version => 20130306143741) do
     t.string   "from"
     t.string   "dept"
     t.string   "sport"
+    t.string   "favorite"
+    t.string   "reason"
   end
 
 end

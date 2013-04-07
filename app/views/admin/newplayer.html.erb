@@ -22,7 +22,9 @@
           <dt class="newplayer">出身</dt><dd><%= f.text_field :from %></dd>
           <dt class="newplayer">学部</dt><dd><%= f.text_field :dept %></dd>
           <dt class="newplayer">経験スポーツ</dt><dd><%= f.text_field :sport %></dd>
-          <dt class="newplayer">画像</dt><dd><input type="file" name="file" accept="image/jpg"></dd>
+          <dt class="newplayer">店名</dt><dd><%= f.text_field :favorite %></dd>
+          <dt class="newplayer">その理由</dt><dd><%= f.text_area :reason, :cols => 30, :rows => 2 %></dd>
+          <dt class="newplayer">画像</dt><dd><input type="file" name="file" accept="image/<%= IMG_EXTENTION %>"></dd>
           <dt class="newplayer">紹介文</dt><dd><%= f.text_area :introduction, :cols => 30, :rows => 3 %></dd>
           <dt class="newplayer">　</dt><dd><%= f.submit('新しく追加する', :class => 'btn btn-info btn-small') %></dd>
         </dl>

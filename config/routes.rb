@@ -5,6 +5,8 @@ Gangvote::Application.routes.draw do
   match 'players/away'     => 'players#away'
   match 'players/:id/vote' => 'players#vote'
 
+  match 'lottery' => 'lottery#index'
+
   resources :players
 
   resources :games

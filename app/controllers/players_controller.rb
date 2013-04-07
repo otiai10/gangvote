@@ -129,7 +129,7 @@ class PlayersController < ApplicationController
       @player = Player.new(params[:player])
 
       # create new file path
-      f_name = params[:player][:team] + '_' + params[:player][:number] + IMG_EXTENTION
+      f_name = params[:player][:team] + '_' + params[:player][:number] + '.' + IMG_EXTENTION
       # pick up param
       file = params[:file]
       unless file.nil?

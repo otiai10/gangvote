@@ -35,7 +35,7 @@
       <!-- vote -->
       <%= form_tag({ :action => 'vote' }, { :class => 'hoge' }) do %>
         <%= hidden_field_tag('id', @player.id) %>
-        <%= submit_tag 'いいね！', { :class => 'btn btn-info btn-mini' } %>
+        <%= submit_tag 'ええやん！', { :class => 'btn btn-info btn-mini' } %>
       <% end %>
     </td>
   </tr>
@@ -52,6 +52,10 @@
           <%= @player.dept %><br>
           <small>経験スポーツ</small>
           <%= @player.sport %>
+          <small>左京区でお気に入りスポット</small>
+          <%= @player.favorite %>
+          <small>その理由</small>
+          <%= @player.reason %>
         </p>
       </blockquote>
     </td>

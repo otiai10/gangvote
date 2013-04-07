@@ -1,7 +1,7 @@
 class TopController < ApplicationController
   def index
     @user_name = cookies[:user_name]
-    @games = Game.all
+    #@games = Game.all
     @game  = Game.last
     @game_join  = session[:game]
 
