@@ -2,7 +2,97 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@mixin sharp {
+  color: #666;
+  font-weight: bold;
+  font-style: italic;
+}
 /***/
-img.prof-list {
-  width: 50px;
+div.contents {
+  table {
+    tbody {
+      tr {
+        th {
+          input {
+            margin: 10px auto;
+            font-size: 1.3em;
+            height: 1.4em;
+          }
+          div {
+            a {
+              img.logo_bar {
+                width: 40%;
+              }
+            }
+          }
+        }
+        td {
+          // padding-top: 8px;
+        }
+        td.prof {
+          width: 30%;
+          img.prof-img {
+            width: 100%;
+            margin-bottom: 20px;
+          }
+        }
+        td.info {
+          width: 40%;
+          a {
+            color: #666;
+            span.sharp {
+              @include sharp;
+            }
+            span.backnumber {
+              font-size: 3em;
+              line-height: 0.8em;
+              @include sharp;
+            }
+            span.player-name {
+              font-size: 1.4em;
+            }
+          }
+        }
+        td.stars {
+          width: 30%;
+          img.img-star {
+            width: 10px;
+          }
+          img.img-star-twenty {
+            width: 15px;
+          }
+        }
+      }
+    }
+  }
+  table.show {
+    tr {
+      td {
+        border: none;
+      }
+      td.prof {
+        width: 65%;
+      }
+      td.info {
+        text-align: right;
+        width: 35%;
+        font-size: 1.5em;
+        span.backnumber {
+          font-size: 4em;
+          line-height: 1em;
+          @include sharp;
+        }
+      }
+      td.introduction {
+        width: 100%;
+      }
+      td.stars {
+        width:65%;
+      }
+      td.vote {
+        text-align: right;
+        width:35%;
+      }
+    }
+  }
 }

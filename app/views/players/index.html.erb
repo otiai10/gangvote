@@ -1,41 +1,20 @@
-<h1>Players List</h1>
 <h3><%= @mess %></h3>
-<table>
+<table class="table">
   <tr>
-    <th>#</th>
-    <th>Name</th>
-    <th>Pos.</th>
-    <th>Gr.</th>
-    <th>Imgurl</th>
-    <th>Introduction</th>
-    <th></th>
-    <th>POINT</th>
-    <!--th>From</th-->
-    <!--th>Info</th-->
-    <th></th>
-    <th></th>
-    <th></th>
+    <!--th>(dbg)</th-->
+    <th colspan="3">
+      <div class="to_home_list">
+        <%= link_to image_tag( 'logos/' + @game[:home] + '_bar.' + IMG_EXTENTION, :class => 'logo logo_bar'), FACEBOOK_PAGES[@game[:home]], {:target => '_blank'} -%>
+        vs
+        <%= link_to image_tag( 'logos/' + @game[:away] + '_bar.' + IMG_EXTENTION, :class => 'logo logo_bar'), FACEBOOK_PAGES[@game[:away]], {:target => '_blank'} -%>
+      </div>
+    </th>
   </tr>
-
-<% @players.each_with_index do |player, _i| %>
-  <tr id="<%= _i %>">
-    <td><%= player.number %></td>
-    <td><%= player.name %><br><%= player.kana %></td>
-    <td><%= POSITIONS[player.position] %></td>
-    <td><%= GRADES[player.grade] %></td>
-    <td><%= image_tag player.imgurl, :class => 'prof-list' %></td>
-    <td><%= player.introduction %></td>
-    <td><a href="players/<%= player.id %>/vote"><button>VOTE</button></a></td>
-    <td><% if player.points.nil? %>0<% else %><%= player.points %><% end %></td>
-    <!--td><%= player.from %></td-->
-    <!--td><%= player.info %></td-->
-    <td><%= link_to 'Show', player %></td>
-    <!--td><%= link_to 'Edit', edit_player_path(player) %></td-->
-    <!--td><%= link_to 'Destroy', player, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td-->
+  <tr>
+    <th colspan="3">
+      <%= render(:partial => "search") %>
+    </th>
   </tr>
-<% end %>
+  <%= render(:partial => "playerrows") %>
 </table>
 
-<br />
-
-<%= link_to 'New Player', new_player_path %>

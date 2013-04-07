@@ -1,0 +1,17 @@
+<html>
+<%= render(:partial => "head") %>
+<body>
+<%= render(:partial => "navbar") %>
+
+<div class="contents">
+  <h1 class="lead xlg">Login as an administrator</h1>
+  <h2 class="lead"><%= @mess %><h2>
+  <%= form_tag({ :controller => 'account', :action => 'adminsignin' }) do %>
+    <%= text_field_tag 'team','', {:size => 200, :placeholder => 'チーム名', :class => 'lg', :required => 'true' } %><br>
+    <%= text_field_tag 'name','', {:size => 200, :placeholder => '管理者名', :class => 'lg', :required => 'true' } %><br>
+    <%= password_field_tag 'password','', { :size => 60, :placeholder => 'パスワード' , :class => 'lg', :required => 'true'} %><br>
+    <%= submit_tag 'Sign in', { :class => 'btn'} %>
+  <% end %>
+</div>
+</body>
+</html>

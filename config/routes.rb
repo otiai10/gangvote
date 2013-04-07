@@ -1,8 +1,16 @@
 Gangvote::Application.routes.draw do
 
+  match 'players/init'     => 'players#init'
+  match 'players/home'     => 'players#home'
+  match 'players/away'     => 'players#away'
+  match 'players/:id/vote' => 'players#vote'
+
+  match 'lottery' => 'lottery#index'
+
   resources :players
 
-  #match 'players/:id/vote' => 'players#vote'
+  resources :games
+ 
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -1,0 +1,83 @@
+<html>
+<%= render(:partial => "head") %>
+<body>
+<%= render(:partial => "navbar") %>
+
+<div class="contents">
+  <div class="row-fluid">
+    <div class="span3 bs-docs-sidebar">
+      <%= render(:partial => "sidebar") %>
+    </div>
+    <div class="span9 main">
+      <h5>登録選手リスト</h5>
+      <div>
+        <%= link_to 'すべての得票をリセットする', {:controller => 'players', :action => 'init'}, :class => 'btn btn-small btn-warning' %>
+        <%= link_to '新しい選手の追加', {:controller => 'admin', :action => 'newplayer'}, :class => 'btn btn-small' %>
+      </div>
+      <table class="table table-hover">
+        <tr>
+        </tr>
+        <% if @players.length != 0 %>
+          <% @players.each_with_index do |player, _i| %>
+            <tr id="<%= _i %>">
+              <!--td class="dbg cell0">
+                <%= _i %>
+              </td-->
+              <!-- info -->
+              <%= form_for(player, :html => {:multipart => true}) do |f| %>
+              <td class="info cell1">
+                <dl class="dl-horizontal">
+                  <dt>氏名</dt><dd><%= f.text_field :name %></dd>
+                  <dt>かな</dt><dd><%= f.text_field :kana %></dd>
+                  <dt>所属チーム</dt><dd><%= f.select :team, TEAMS_FORM %></dd>
+                  <dt>背番号</dt><dd><%= f.select :number, (1..99).to_a %></dd>
+                  <dt>ポジション</dt><dd><%= f.select :position, POSITIONS_FORM %></dd>
+                  <dt>学年</dt><dd><%= f.select :grade, GRADES_FORM %></dd>
+                  <dt>出身</dt><dd><%= f.text_field :from %></dd>
+                  <dt>学部</dt><dd><%= f.text_field :dept %></dd>
+                  <dt>経験スポーツ</dt><dd><%= f.text_field :sport %></dd>
+                  <dt>店名</dt><dd><%= f.text_field :favorite %></dd>
+                  <dt>そのポイント</dt><dd><%= f.text_area :reason, :cols => 30, :rows => 2 %></dd>
+                  <!--dt>その他</dt><dd><%= f.text_area :info, :cols => 30, :rows => 2 %></dd-->
+                </dl>
+              </td>
+              <!-- thumbnail -->
+              <td class="prof cell3">
+                <dl class="dl-horizontal">
+                  <dt>画像</dt>
+                  <dd><%= image_tag(player.imgurl, :class => 'prof-img') %><br>
+                    <span class="xsml">↓新しい画像を設定する場合</span><br>
+                    <input type="file" name="file" accept="image/<%= IMG_EXTENTION %>">
+                  </dd>
+                  <dt>紹介文</dt><dd><%= f.text_area :introduction, :cols => 30, :rows => 3 %></dd>
+                  <dt></dt>
+                  <dd>
+                    <%= f.submit('情報を更新する', :class => 'btn btn-info btn-small') %>
+                    <%= link_to '削除', {:controller => 'players', :action => 'delete', :id => player.id }, :data => { :confirm => 'この選手を削除しますか?' }, :class => 'btn btn-small btn-danger delete-player' %>
+                  </dd>
+                </dl>
+              </td>
+            <% end %>
+              <!-- stars -->
+              <td class="stars cell4">
+                <!-- current -->
+                <% if player.points.nil? %>
+                  0
+                <% else %>
+                  <small><%= player.points %></small>
+                <% end %>
+              </td>
+              <!--td><%= link_to 'Edit', edit_player_path(player) %></td-->
+              <!--td><%= link_to 'Destroy', player, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td-->
+            </tr>
+          <% end %>
+        <% else %>
+          <tr>だれもいない</tr>
+        <% end %>
+      </table>
+
+    </div>
+  </div>
+</div>
+</body>
+</html>

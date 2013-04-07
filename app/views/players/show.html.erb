@@ -1,50 +1,64 @@
-<p id="notice"><%= notice %></p>
+<table class="table show">
+  <tr>
+    <!-- thumbnail -->
+    <td class="prof">
+      <%= link_to image_tag(@player.imgurl, :class => 'prof-img'), @player %>
+    </td>
 
-<p>
-  <b>Number:</b>
-  <%= @player.number %>
-</p>
+    <!-- info -->
+    <td class="info">
+      <span class="sharp">#</span><span class="backnumber"><%= @player.number %></span>
+      <br>
+      <%= POSITIONS[@player.position] %>　<%= GRADES[@player.grade] %><br>
+      <span class="player-name"><%= @player.name %></span><br>
+      <small class="xsml"><%= @player.kana %></small>
+    </td>
+  </tr>
 
-<p>
-  <b>Name:</b>
-  <%= @player.name %>
-</p>
+  <tr>
+    <!-- stars -->
+    <td class="stars">
+      <!-- current -->
+      <% if @player.points.nil? %>
+        0
+      <% else %>
+        <% @player.point_big.to_i.times do %>
+          <%= image_tag 'src/star_big.png', :class => 'img-star-twenty' %>
+        <% end %>
+        <% @player.point_one.to_i.times do %>
+          <%= image_tag 'src/star_small.png', :class => 'img-star' %>
+        <% end %>
+        <small><%= @player.points %></small>
+      <% end %>
+    </td>
+    <td class="vote">
+      <!-- vote -->
+      <%= form_tag({ :action => 'vote' }, { :class => 'hoge' }) do %>
+        <%= hidden_field_tag('id', @player.id) %>
+        <%= submit_tag 'ええやん！', { :class => 'btn btn-info btn-mini' } %>
+      <% end %>
+    </td>
+  </tr>
 
-<p>
-  <b>Kana:</b>
-  <%= @player.kana %>
-</p>
+  <tr>
+    <td colspan="2" class="info2">
+      <blockquote class="pull-right">
+        <p>
+          <small>紹介</small>
+          <%= @player.introduction %>
+          <small>出身</small>
+          <%= @player.from %><br>
+          <small>学部学科</small>
+          <%= @player.dept %><br>
+          <small>経験スポーツ</small>
+          <%= @player.sport %>
+          <small>左京区でお気に入りスポット</small>
+          <%= @player.favorite %>
+          <small>その理由</small>
+          <%= @player.reason %>
+        </p>
+      </blockquote>
+    </td>
+  </tr>
 
-<p>
-  <b>Position:</b>
-  <%= @player.position %>
-</p>
-
-<p>
-  <b>Grade:</b>
-  <%= @player.grade %>
-</p>
-
-<p>
-  <b>Imgurl:</b>
-  <%= @player.imgurl %>
-</p>
-
-<p>
-  <b>Introduction:</b>
-  <%= @player.introduction %>
-</p>
-
-<p>
-  <b>From:</b>
-  <%= @player.from %>
-</p>
-
-<p>
-  <b>Info:</b>
-  <%= @player.info %>
-</p>
-
-
-<%= link_to 'Edit', edit_player_path(@player) %> |
-<%= link_to 'Back', players_path %>
+</table>
