@@ -13,11 +13,8 @@
   <div class="span9 game-title">
   <% if @user_name.nil? || @game_join.nil? %>
     <%= form_tag({ :controller => 'account', :action => 'login' }, { :id => 'ini-form' }) do %>
-      <select id="game_select" name="game">
-        <% @games.each do |game| %>
-          <option value="<%= @game.hometeam + '-' + @game.awayteam %>"><%= @game.hometeam + ' vs ' + @game.awayteam + ' @' + STADIUMS[@game.stadium] %></option>
-        <% end %>
-      </select>
+      <%= @game.title %>
+      <input type="hidden" name="game" value="<%= @game.hometeam + '-' + @game.awayteam %>">
       <%= text_field_tag 'user_name', '', { :size => 50, :placeholder => 'ユーザ名を登録', :required => true } %><br>
       <%= submit_tag '参加', { :class => 'btn'} %><br>
       <small>※ MVP投票集計以外の目的には使用されません</small><br>
