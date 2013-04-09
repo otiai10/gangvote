@@ -5,7 +5,7 @@ class AccountController < ApplicationController
     hometeam = params[:game].split('-')[0]
     awayteam = params[:game].split('-')[1]
     session[:game] = { :home => hometeam, :away => awayteam }
-    session[:lottery] = (10001 + rand(9999)).to_s[1,4]
+    session[:lottery] = (100001 + rand(99999)).to_s[1,5]
     redirect_to players_url
   end
 
