@@ -33,9 +33,7 @@
         <%= hidden_field_tag('id', player['id']) %>
         <%= submit_tag 'ええやん！', { :class => 'btn btn-info btn-mini' } %>
       <% end %>
-      <small><small>so far</small></small>
-      <br>
-      <small><%= player['points'] %></small>
+      <small>（<%= player['points'] %>）</small>
     </td>
     <!--td><%= link_to 'Edit', edit_player_path(player) %></td-->
     <!--td><%= link_to 'Destroy', player, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td-->

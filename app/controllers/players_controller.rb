@@ -23,7 +23,7 @@ class PlayersController < ApplicationController
       @game = session[:game]
 
       #@players = Player.find(:all, :order => "points DESC, number ASC")
-      @players = ActiveRecord::Base.connection.execute("select *, (SELECT count(*) FROM votes WHERE votes.voted_id=players.id) AS score FROM players ORDER BY score DESC")
+      @players = ActiveRecord::Base.connection.execute("select *, (SELECT count(*) FROM votes WHERE votes.voted_id=players.id) AS score FROM players ORDER BY score DESC, points DESC, number ASC")
       @players.each do |player|
         player['point_big'] = player['score'].to_i.div(STAR_COMPRESS_NUM)
         player['point_one'] = player['score'].to_i.%STAR_COMPRESS_NUM
@@ -49,10 +49,11 @@ class PlayersController < ApplicationController
 
       @game = session[:game]
 
-      @players = Player.find(:all,:conditions => { :team => @game[:home] }, :order => "number ASC")
+      #@players = Player.find(:all,:conditions => { :team => @game[:home] }, :order => "number ASC")
+      @players = ActiveRecord::Base.connection.execute("select *, (SELECT count(*) FROM votes WHERE votes.voted_id=players.id) AS score FROM players ORDER BY number ASC, score DESC")
       @players.each do |player|
-        player[:point_big] = player.points.to_i.div(STAR_COMPRESS_NUM)
-        player[:point_one] = player.points.to_i.%STAR_COMPRESS_NUM
+        player['point_big'] = player['score'].to_i.div(STAR_COMPRESS_NUM)
+        player['point_one'] = player['score'].to_i.%STAR_COMPRESS_NUM
       end
 
       respond_to do |format|
