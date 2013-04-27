@@ -153,7 +153,8 @@ REGION_FORM = {
 
 TEAMS_FORM = {
   'gangsters' => 'gangsters',
-  'wildrover' => 'wildrover'
+  'wildrover' => 'wildrover',
+  'raccoons'  => 'raccoons'
 }
 FACEBOOK_PAGES = {
   'gangsters' => 'https://www.facebook.com/pages/%E4%BA%AC%E9%83%BD%E5%A4%A7%E5%AD%A6%E3%82%A2%E3%83%A1%E3%83%AA%E3%82%AB%E3%83%B3%E3%83%95%E3%83%83%E3%83%88%E3%83%9C%E3%83%BC%E3%83%AB%E9%83%A8%E3%82%AE%E3%83%A3%E3%83%B3%E3%82%B0%E3%82%B9%E3%82%BF%E3%83%BC%E3%82%BA/123221844424464',
@@ -171,4 +172,5 @@ STADIUMS_FORM = {
   '同志社大学田辺キャンパス' => 2
 }
 
-IMG_EXTENTION = 'gif'
+#IMG_EXTENTION = 'gif'
+IMG_EXTENTION = 'jpg'

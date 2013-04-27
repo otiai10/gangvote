@@ -5,8 +5,8 @@
     <th colspan="3">
       <div class="to_home_list">
         <%= link_to image_tag( 'logos/' + @game[:home] + '_bar.' + IMG_EXTENTION, :class => 'logo logo_bar'), FACEBOOK_PAGES[@game[:home]], {:target => '_blank'} -%>
-        vs
-        <%= link_to image_tag( 'logos/' + @game[:away] + '_bar.' + IMG_EXTENTION, :class => 'logo logo_bar'), FACEBOOK_PAGES[@game[:away]], {:target => '_blank'} -%>
+        <%#= link_to image_tag( 'logos/' + @game[:away] + '_bar.' + IMG_EXTENTION, :class => 'logo logo_bar'), FACEBOOK_PAGES[@game[:away]], {:target => '_blank'} -%>
+        <small>facebookページ</small>
       </div>
     </th>
   </tr>

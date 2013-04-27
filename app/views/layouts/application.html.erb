@@ -30,8 +30,8 @@
         <div class="login-info">
           <p></p>
           <% unless @user_name.nil? %>
-            <%# link_to(raw('<span class="xsml">' + @user_name + 'あと' + @vote_left.to_s + '回</span>'), {:controller => 'players'}, {:class => 'brand'}) %>
-            <%= link_to(raw('<span class="xsml">' + @user_name + 'あと' + @vote_left.to_s + '回</span>'), {:controller => 'lottery'}, {:class => 'brand'}) %>
+            <%= link_to(raw('<span class="xsml">' + @user_name + 'あと' + @vote_left.to_s + '回</span>'), {:controller => 'players'}, {:class => 'brand'}) %>
+            <%#= link_to(raw('<span class="xsml">' + @user_name + 'あと' + @vote_left.to_s + '回</span>'), {:controller => 'lottery'}, {:class => 'brand'}) %>
           <% end %>
           </a>
         </div>
@@ -58,15 +58,15 @@
   <div class="navbar navbar-footer <% if(controller_name != 'top') %>navbar-fixed-bottom<% end %>">
     <div class="navbar-inner">
       <ul class="nav">
-        <li class="<% if(controller.action_name == 'home') %>active<% end %> left">
-          <%= link_to(@game[:home], {:controller => 'players', :action => 'home' }, {:class => 'brand'}) %>
-        </li>
         <li class="<% if(controller.action_name == 'index') %>active<% end %> center">
-          <%= link_to( 'vs', {:controller => 'players'}, {:class => 'brand'}) %>
+          <%= link_to( "ランキング", {:controller => 'players'}, {:class => 'brand'}) %>
         </li>
-        <li class="<% if(controller.action_name == 'away') %>active<% end %> right">
-          <%= link_to(@game[:away], {:controller => 'players', :action => 'away' }, {:class => 'brand'}) %>
+        <li class="<% if(controller.action_name == 'home') %>active<% end %> left">
+          <%= link_to("背番号順", {:controller => 'players', :action => 'home' }, {:class => 'brand'}) %>
         </li>
+        <!--li class="<%# if(controller.action_name == 'away') %>active<%# end %> right">
+          <%# link_to(@game[:away], {:controller => 'players', :action => 'away' }, {:class => 'brand'}) %>
+        </li-->
       </ul>
     </div>
   </div>

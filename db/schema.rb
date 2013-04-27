@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130324104722) do
+ActiveRecord::Schema.define(:version => 20130427022705) do
 
   create_table "adminusers", :force => true do |t|
     t.string   "team",       :null => false
@@ -50,6 +50,16 @@ ActiveRecord::Schema.define(:version => 20130324104722) do
     t.string   "sport"
     t.string   "favorite"
     t.string   "reason"
+  end
+
+  create_table "votes", :force => true do |t|
+    t.integer  "voted_id"
+    t.datetime "voted_time"
+    t.datetime "ts"
+    t.text     "voted_by"
+    t.text     "message"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
 end

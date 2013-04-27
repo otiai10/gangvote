@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  voted_id: 1
+  voted_time: 2013-04-27 11:27:05
+  ts: 2013-04-27 11:27:05
+  voted_by: MyText
+  message: MyText
+
+two:
+  voted_id: 1
+  voted_time: 2013-04-27 11:27:05
+  ts: 2013-04-27 11:27:05
+  voted_by: MyText
+  message: MyText

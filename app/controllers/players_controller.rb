@@ -22,10 +22,11 @@ class PlayersController < ApplicationController
 
       @game = session[:game]
 
-      @players = Player.find(:all, :order => "points DESC, number ASC")
+      #@players = Player.find(:all, :order => "points DESC, number ASC")
+      @players = ActiveRecord::Base.connection.execute("select *, (SELECT count(*) FROM votes WHERE votes.voted_id=players.id) AS score FROM players ORDER BY score DESC")
       @players.each do |player|
-        player[:point_big] = player.points.to_i.div(STAR_COMPRESS_NUM)
-        player[:point_one] = player.points.to_i.%STAR_COMPRESS_NUM
+        player['point_big'] = player['score'].to_i.div(STAR_COMPRESS_NUM)
+        player['point_one'] = player['score'].to_i.%STAR_COMPRESS_NUM
       end
 
       respond_to do |format|
@@ -232,24 +233,20 @@ class PlayersController < ApplicationController
 end
 
 def _vote()
-  @player = Player.find(params[:id])
-  points = @player.points
-  unless points.nil?
-    points = points + 1
-  else
-    points = 1
-  end
-  @player.update_attributes( :points => points )
+  @vote = Vote.new
+  @vote.voted_id   = params[:id]
+  @vote.voted_time = Time.now
+  @vote.ts         = Time.now.to_i
+#  @player = Player.find(params[:id])
+#  points = @player.points
+#  unless points.nil?
+#    points = points + 1
+#  else
+#    points = 1
+#  end
+#  @player.update_attributes( :points => points )
   new_vote_left = @vote_left.to_i - 1
   cookies[:vote_left] = { :value => new_vote_left }
-  logger.debug new_vote_left
+#  logger.debug new_vote_left
+  return @vote.save
 end
-
-#def authenticate()
-#  if session[:login_user].nil?
-#    redirect_to :controller => 'admin', :action => 'login'
-#    return false
-#  else
-#    return true
-#  end
-#end
