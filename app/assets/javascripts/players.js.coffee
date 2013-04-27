@@ -27,3 +27,5 @@ $ ->
     offset = $(this).attr('offset')
     cap = getCap offset, numbers.sortByNumber()
     window.location.href = '#' + cap
+
+  enableDelayLoad({duration:400, baseDOM:'body', immediately:true })

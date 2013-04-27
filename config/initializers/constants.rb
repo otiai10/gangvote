@@ -1,6 +1,7 @@
 # 定数定義
 
 RAILS_ROOT = '/home/hiromu/rails/projects/gangvote/'
+BASE_URL   = 'http://gang-web.mobi/'
 
 MAX_VOTE_TIME = 4
 COOKIE_EXPIRE_HOUR = 10

@@ -2,7 +2,8 @@
   <tr id="<%= player['number'] %>" class="anchor">
     <!-- thumbnail -->
     <td class="prof">
-      <%= link_to image_tag(player['imgurl'], :class => 'prof-img'), player %>
+      <%#= link_to image_tag(player['imgurl'], :class => 'prof-img delayload', :data => '/assets/' + player['imgurl']), player %>
+      <a href="<%=BASE_URL%>players/<%=player['id']%>"><img src="" class="prof-img delayload" data="<%=BASE_URL%>assets/<%=player['imgurl']%>"></a>
     </td>
     <!-- info -->
     <td class="info">
@@ -20,10 +21,10 @@
       <small><small>Today</small></small><br>
       <!-- current -->
       <% player['point_big'].to_i.times do %>
-        <%= image_tag 'src/star_big.png', :class => 'img-star-twenty' %>
+        <%= image_tag 'src/star_big.png', :class => 'img-star-twenty delayload' %>
       <% end %>
       <% player['point_one'].to_i.times do %>
-        <%= image_tag 'src/star_small.png', :class => 'img-star' %>
+        <%= image_tag 'src/star_small.png', :class => 'img-star delayload' %>
       <% end %>
       <small><%= player['score'] %></small>
       <br>
