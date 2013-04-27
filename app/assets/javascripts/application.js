@@ -13,3 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+window.onload = function() {
+    setTimeout(scrollTo, 100, 0, 1);
+}

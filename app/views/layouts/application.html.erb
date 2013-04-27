@@ -7,9 +7,6 @@
   <%= csrf_meta_tags %>
   <!--link rel="stylesheet" href="bootstrap/css/bootstrap.css" /-->
   <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
-  <link rel="shorcut icon" href="/assets/logos/icon.png" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <link rel="apple-touch-icon" href="/assets/logos/icon.png" />
   <script type="text/javascript" src="http://otiai10.com/delayload/delayload.js"></script>
 </head>
 <%# 応急処理的なw %>
@@ -56,7 +53,7 @@
 <!-- twitterbootstrap navbar -->
 
 <% if(controller_name != 'top') %>
-  <div class="navbar navbar-footer <!--<% if(controller_name != 'top') %>navbar-fixed-bottom<% end %>-->">
+  <div class="navbar navbar-footer <% if(controller_name != 'top') %>navbar-fixed-bottom<% end %>">
     <div class="navbar-inner">
       <ul class="nav">
         <li class="<% if(controller.action_name == 'index') %>active<% end %> center">
