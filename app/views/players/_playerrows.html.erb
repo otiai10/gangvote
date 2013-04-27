@@ -18,7 +18,7 @@
     </td>
     <!-- stars -->
     <td class="stars">
-      <small><small>Today</small></small><br>
+      <small><small>Today</small>: <%= player['score'] %></small><br>
       <!-- current -->
       <% player['point_big'].to_i.times do %>
         <%= image_tag 'src/star_big.png', :class => 'img-star-twenty delayload' %>
@@ -26,14 +26,13 @@
       <% player['point_one'].to_i.times do %>
         <%= image_tag 'src/star_small.png', :class => 'img-star delayload' %>
       <% end %>
-      <small><%= player['score'] %></small>
       <br>
       <!-- vote -->
       <%= form_tag({ :action => 'vote' }, { :class => 'hoge' }) do %>
         <%= hidden_field_tag('id', player['id']) %>
         <%= submit_tag 'ええやん！', { :class => 'btn btn-info btn-mini' } %>
       <% end %>
-      <small>（<%= player['points'] %>）</small>
+      <small><small>（So Far : <%= player['points'] %>）</small></small>
     </td>
     <!--td><%= link_to 'Edit', edit_player_path(player) %></td-->
     <!--td><%= link_to 'Destroy', player, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td-->
