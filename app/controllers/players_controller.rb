@@ -23,10 +23,12 @@ class PlayersController < ApplicationController
       @game = session[:game]
 
       #@players = Player.find(:all, :order => "points DESC, number ASC")
-      @players = ActiveRecord::Base.connection.execute("select *, (SELECT count(*) FROM votes WHERE votes.voted_id=players.id) AS score FROM players ORDER BY score DESC, points DESC, number ASC")
+      #@players = ActiveRecord::Base.connection.execute("select *, (SELECT count(*) FROM votes WHERE votes.voted_id=players.id) AS score FROM players ORDER BY score DESC, points DESC, number ASC")
+      @players = ActiveRecord::Base.connection.execute("select *, (SELECT count(*) FROM votes WHERE votes.voted_id=players.id AND voted_day='now') AS score, (SELECT count(*) FROM votes WHERE votes.voted_id=players.id) AS total_score FROM players ORDER BY score DESC, total_score DESC, number ASC")
       @players.each do |player|
         player['point_big'] = player['score'].to_i.div(STAR_COMPRESS_NUM)
         player['point_one'] = player['score'].to_i.%STAR_COMPRESS_NUM
+        player['point_total'] = player['points'].to_i + player['total_score'].to_i
       end
 
       respond_to do |format|

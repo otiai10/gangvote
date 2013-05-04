@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130427022705) do
+ActiveRecord::Schema.define(:version => 20130504131545) do
 
   create_table "adminusers", :force => true do |t|
     t.string   "team",       :null => false
@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(:version => 20130427022705) do
     t.text     "message"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.date     "voted_day"
   end
 
 end
