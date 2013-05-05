@@ -4,7 +4,14 @@
 require 'app/models/player'
 require 'app/models/vote'
 
-#@players = ActiveRecord::Base.connection.execute("select *, (SELECT count(*) FROM votes WHERE votes.voted_id=players.id AND voted_day='now') AS score, (SELECT count(*) FROM votes WHERE votes.voted_id=players.id) AS total_score FROM players ORDER BY score DESC, total_score DESC, number ASC")
-
 @players = Player.find(:all)
-p @players
+@players.each do |player|
+  player.points.to_i.times do
+    vote = Vote.new
+    vote[:voted_id]  = player.id
+    vote[:voted_day] = '2013 4-14'
+    result = vote.save
+    p vote
+    p result
+  end
+end

@@ -28,7 +28,7 @@ class PlayersController < ApplicationController
       @players.each do |player|
         player['point_big'] = player['score'].to_i.div(STAR_COMPRESS_NUM)
         player['point_one'] = player['score'].to_i.%STAR_COMPRESS_NUM
-        player['point_total'] = player['points'].to_i + player['total_score'].to_i
+        player['point_total'] = player['total_score'].to_i
       end
 
       respond_to do |format|
