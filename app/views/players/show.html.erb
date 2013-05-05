@@ -19,17 +19,18 @@
     <!-- stars -->
     <td class="stars">
       <!-- current -->
-      <% if @player.points.nil? %>
-        0
-      <% else %>
+      <div id="star-today">
+        Today: <small><%= @player.today_votes.to_i %></small>
         <% @player.point_big.to_i.times do %>
           <%= image_tag 'src/star_big.png', :class => 'img-star-twenty' %>
         <% end %>
         <% @player.point_one.to_i.times do %>
           <%= image_tag 'src/star_small.png', :class => 'img-star' %>
         <% end %>
-        <small><%= @player.points %></small>
-      <% end %>
+      </div>
+      <div id="star-total">
+        SoFar: <small><%= @player.total_votes.to_i %></small>
+      </div>
     </td>
     <td class="vote">
       <!-- vote -->

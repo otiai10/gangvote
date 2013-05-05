@@ -2,9 +2,10 @@ class PlayersController < ApplicationController
 
 
   def init
-    if Player.update_all("points=0")
-      cookies[:mess] = '得票を初期化しました'
-    end
+    # disabled
+    #if Player.update_all("points=0")
+    cookies[:mess] = 'この機能はなくなりました。近日撤去します'
+    #end
     redirect_to :controller => 'admin', :action => 'players'
   end
 
@@ -22,9 +23,7 @@ class PlayersController < ApplicationController
 
       @game = session[:game]
 
-      #@players = Player.find(:all, :order => "points DESC, number ASC")
-      #@players = ActiveRecord::Base.connection.execute("select *, (SELECT count(*) FROM votes WHERE votes.voted_id=players.id) AS score FROM players ORDER BY score DESC, points DESC, number ASC")
-      @players = ActiveRecord::Base.connection.execute("select *, (SELECT count(*) FROM votes WHERE votes.voted_id=players.id AND voted_day='now') AS score, (SELECT count(*) FROM votes WHERE votes.voted_id=players.id) AS total_score FROM players ORDER BY score DESC, total_score DESC, number ASC")
+      @players = ActiveRecord::Base.connection.execute("select *, (SELECT count(*) FROM votes WHERE votes.voted_id=players.id AND voted_day=date('" + Date.today.to_s + "')) AS score, (SELECT count(*) FROM votes WHERE votes.voted_id=players.id) AS total_score FROM players ORDER BY score DESC, total_score DESC, number ASC")
       @players.each do |player|
         player['point_big'] = player['score'].to_i.div(STAR_COMPRESS_NUM)
         player['point_one'] = player['score'].to_i.%STAR_COMPRESS_NUM
@@ -51,37 +50,11 @@ class PlayersController < ApplicationController
 
       @game = session[:game]
 
-      #@players = Player.find(:all,:conditions => { :team => @game[:home] }, :order => "number ASC")
-      @players = ActiveRecord::Base.connection.execute("select *, (SELECT count(*) FROM votes WHERE votes.voted_id=players.id) AS score FROM players ORDER BY number ASC, score DESC")
+      @players = ActiveRecord::Base.connection.execute("select *, (SELECT count(*) FROM votes WHERE votes.voted_id=players.id AND voted_day=date('" + Date.today.to_s + "')) AS score, (SELECT count(*) FROM votes WHERE votes.voted_id=players.id) AS total_score FROM players ORDER BY number ASC")
       @players.each do |player|
         player['point_big'] = player['score'].to_i.div(STAR_COMPRESS_NUM)
         player['point_one'] = player['score'].to_i.%STAR_COMPRESS_NUM
-      end
-
-      respond_to do |format|
-        format.html # index.html.erb
-        format.json { render :json => @players }
-      end
-    end
-  end
-
-  # ほぼindexと同じ
-  def away
-    if isJoined
-      @mess      = cookies[:mess]
-      @user_name = cookies[:user_name]
-      @vote_left = cookies[:vote_left]
-      if @vote_left.nil?
-        @vote_left = 0
-      end
-      cookies[:mess] = { :value => '' }
-
-      @game = session[:game]
-
-      @players = Player.find(:all,:conditions => { :team => @game[:away] }, :order => "number ASC")
-      @players.each do |player|
-        player[:point_big] = player.points.to_i.div(STAR_COMPRESS_NUM)
-        player[:point_one] = player.points.to_i.%STAR_COMPRESS_NUM
+        player['point_total'] = player['total_score'].to_i
       end
 
       respond_to do |format|
@@ -99,10 +72,14 @@ class PlayersController < ApplicationController
       @game = session[:game]
 
       @player = Player.find(params[:id])
+      today_votes = Vote.count(:conditions => { :voted_id => @player.id, :voted_day => Date.today })
+      total_votes = Vote.count(:conditions => { :voted_id => @player.id })
       @user_name = cookies[:user_name]
       @vote_left = cookies[:vote_left]
-      @player[:point_big] = @player.points.to_i.div(STAR_COMPRESS_NUM)
-      @player[:point_one] = @player.points.to_i.%STAR_COMPRESS_NUM
+      @player[:point_big] = today_votes.to_i.div(STAR_COMPRESS_NUM)
+      @player[:point_one] = today_votes.to_i.%STAR_COMPRESS_NUM
+      @player[:today_votes] = today_votes
+      @player[:total_votes] = total_votes
       respond_to do |format|
         format.html { render :layout => true }
         format.json { render :json => @player }
@@ -228,26 +205,13 @@ class PlayersController < ApplicationController
       format.html { redirect_to players_url }
       format.json { head :no_content }
     end
-    ## messをcookie使ってやり取りするならこの処理はいらん
-    #@players = Player.find(:all, :order => "points DESC")
-    #@vote_left = cookies[:vote_left]
-    #render 'players/index'
   end
 end
 
 def _vote()
   @vote = Vote.new
   @vote.voted_id   = params[:id]
-  @vote.voted_time = Time.now
-  @vote.ts         = Time.now.to_i
-#  @player = Player.find(params[:id])
-#  points = @player.points
-#  unless points.nil?
-#    points = points + 1
-#  else
-#    points = 1
-#  end
-#  @player.update_attributes( :points => points )
+  @vote.voted_day  = Date.today
   new_vote_left = @vote_left.to_i - 1
   cookies[:vote_left] = { :value => new_vote_left }
 #  logger.debug new_vote_left
