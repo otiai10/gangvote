@@ -1,14 +1,5 @@
 class PlayersController < ApplicationController
 
-
-  def init
-    # disabled
-    #if Player.update_all("points=0")
-    cookies[:mess] = 'この機能はなくなりました。近日撤去します'
-    #end
-    redirect_to :controller => 'admin', :action => 'players'
-  end
-
   # GET /players
   # GET /players.json
   def index
